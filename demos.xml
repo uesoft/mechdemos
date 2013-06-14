@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<demos>
+   <name>SimMechanics</name>
+   <type>simulink</type>
+   <icon>$toolbox/matlab/icons/simulinkicon.gif</icon>
+   <label>SimMechanics</label>
+   <description isCdata="no">
+<p>SimMechanics&#8482; extends Simulink&#174; with tools for modeling and simulating mechanical systems. It is integrated with MathWorks&#8482; control design and code generation products, enabling you to design controllers and test them in real time with the model of the mechanical system.</p>
+   </description>
+
+<demosection>
+  <label>Overview</label>
+  <demoitem>
+    <label>Robot Arm with Virtual Reality Scene</label>
+    <source>mech_robot_vr</source>
+    <file>html/mech_robot_vr.html</file>
+    <type>model</type>
+    <dependency>Virtual Reality Toolbox</dependency>
+  </demoitem>
+  <demoitem>
+    <label>Multiaxis Flexible Cantilever</label>
+    <source>mech_flexible_cantilever_multiaxis</source>
+    <file>html/mech_flexible_cantilever_multiaxis.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Stewart Platform with Control Reference Trajectory</label>
+    <source>mech_stewart_trajectory</source>
+    <file>html/mech_stewart_trajectory.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Car Handling</label>
+    <source>mech_car_handling</source>
+    <file>html/mech_car_handling.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Motorcycle: Full Nonlinear Motion</label>
+    <source>mech_motorcycle_plain</source>
+    <file>html/mech_motorcycle_plain.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Hydraulically Operated Crate Transfer Mechanism</label>
+    <source>mech_interface_crate_transfer</source>
+    <file>html/mech_interface_crate_transfer.html</file>
+    <type>model</type>
+  </demoitem>
+</demosection>
+
+<demosection>
+  <label>Stewart Platform Models</label>
+  <demoitem>
+    <label>Stewart Platform with Control Reference Trajectory</label>
+    <source>mech_stewart_trajectory</source>
+    <file>html/mech_stewart_trajectory.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Stewart Platform with Slider Controls</label>
+    <source>mech_stewart_slider</source>
+    <file>html/mech_stewart_slider.html</file>
+    <type>model</type>
+  </demoitem>
+</demosection>
+
+<demosection>
+  <label>Automotive Models</label>
+  <demoitem>
+    <label>Four Cylinder IC Engine with Virtual Reality Scene</label>
+    <source>mech_fceng_vr</source>
+    <file>html/mech_fceng_vr.html</file>
+    <type>model</type>
+    <dependency>Virtual Reality Toolbox</dependency>
+  </demoitem>
+  <demoitem>
+    <label>Clutch Mechanism</label>
+    <source>mech_clutch</source>
+    <file>html/mech_clutch.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Automobile Transmission</label>
+    <source>mech_transmission</source>
+    <file>html/mech_transmission.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Airbag and Crash Test Dummy with Virtual Reality Scene</label>
+    <source>mech_airbag_vr</source>
+    <file>html/mech_airbag_vr.html</file>
+    <type>model</type>
+    <dependency>Virtual Reality Toolbox</dependency>
+  </demoitem>
+  <demoitem>
+    <label>Car Handling</label>
+    <source>mech_car_handling</source>
+    <file>html/mech_car_handling.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Motorcycle: Linear Stability Analysis</label>
+    <source>mech_motorcycle_stability</source>
+    <file>html/mech_motorcycle_stability.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Motorcycle: Full Nonlinear Motion</label>
+    <source>mech_motorcycle_plain</source>
+    <file>html/mech_motorcycle_plain.html</file>
+    <type>model</type>
+  </demoitem>
+</demosection>
+
+<demosection>
+  <label>Flexible Body Models</label>
+  <demoitem>
+    <label>Vibrating String</label>
+    <source>mech_flexible_string</source>
+    <file>html/mech_flexible_string.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Multiaxis Flexible Cantilever</label>
+    <source>mech_flexible_cantilever_multiaxis</source>
+    <file>html/mech_flexible_cantilever_multiaxis.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Flexible Four Bar Mechanism</label>
+    <source>mech_flexible_four_bar</source>
+    <file>html/mech_flexible_four_bar.html</file>
+    <type>model</type>
+  </demoitem>
+</demosection>
+
+<demosection>
+  <label>Simscape Interface Models</label>
+  <demoitem>
+    <label>3D - 1D Rotational Energy Conversion</label>
+    <source>mech_interface_rot_spr_damper</source>
+    <file>html/mech_interface_rot_spr_damper.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Hydraulic - 3D Rotational Energy Conversion</label>
+    <source>mech_interface_hyd_slidercrank</source>
+    <file>html/mech_interface_hyd_slidercrank.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Hydraulically Operated Crate Transfer Mechanism</label>
+    <source>mech_interface_crate_transfer</source>
+    <file>html/mech_interface_crate_transfer.html</file>
+    <type>model</type>
+  </demoitem>
+</demosection>
+
+<demosection>
+  <label>Simple Machine Models</label>
+  <demoitem>
+    <label>Simple Pendulum</label>
+    <source>mech_spen</source>
+    <file>html/mech_spen.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Double Pendulum</label>
+    <source>mech_dpen</source>
+    <file>html/mech_dpen.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Gear Constraint</label>
+    <source>mech_gears</source>
+    <file>html/mech_gears.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Four Bar Mechanism</label>
+    <source>mech_four_bar</source>
+    <file>html/mech_four_bar.html</file>
+    <type>model</type>
+  </demoitem>
+</demosection>
+
+<demosection>
+  <label>Friction Models</label>
+  <demoitem>
+    <label>Static and Kinetic Friction Library</label>
+    <source>mech_friction</source>
+    <file>html/mech_friction.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Projectile Motion with Air Drag</label>
+    <source>mech_ballistic_kin_fric</source>
+    <file>html/mech_ballistic_kin_fric.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Viscous Medium</label>
+    <source>mech_viscous</source>
+    <file>html/mech_viscous.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Double Pendulum with Stiction</label>
+    <source>mech_dpen_sticky</source>
+    <file>html/mech_dpen_sticky.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Sticky Sliding Boxes</label>
+    <source>mech_sticky_box</source>
+    <file>html/mech_sticky_box.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Stochastic Microcontroller</label>
+    <source>mech_brownian_osc_control</source>
+    <file>html/mech_brownian_osc_control.html</file>
+    <type>model</type>
+  </demoitem>
+</demosection>
+
+<demosection>
+  <label>Mechanical Application Models</label>
+  <demoitem>
+    <label>Rolling Sphere</label>
+    <source>mech_rolling_sphere</source>
+    <file>html/mech_rolling_sphere.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Bouncing Ball</label>
+    <source>mech_bouncing_ball</source>
+    <file>html/mech_bouncing_ball.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Gears with Backlash</label>
+    <source>mech_gears_backlash</source>
+    <file>html/mech_gears_backlash.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Point-Curve Constraint on a 3D Toroid Curve</label>
+    <source>mech_toroid</source>
+    <file>html/mech_toroid.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Rack and Pinion</label>
+    <source>mech_rack_pinion</source>
+    <file>html/mech_rack_pinion.html</file>
+    <type>model</type>
+  </demoitem>
+</demosection>
+
+<demosection>
+  <label>Other Models</label>
+  <demoitem>
+    <label>Flyball Governor</label>
+    <source>mech_flyball</source>
+    <file>html/mech_flyball.html</file>
+    <type>model</type>
+  </demoitem>
+  <demoitem>
+    <label>Planetary Gear with Virtual Reality Scene</label>
+    <source>mech_planetary_vr</source>
+    <file>html/mech_planetary_vr.html</file>
+    <type>model</type>
+    <dependency>Virtual Reality Toolbox</dependency>
+  </demoitem>
+  <demoitem>
+    <label>Cam Belt</label>
+    <source>mech_cambelt</source>
+    <file>html/mech_cambelt.html</file>
+    <type>model</type>
+  </demoitem>   
+  <demoitem>
+    <label>Conveyor with Virtual Reality Scene</label>
+    <source>mech_conveyor_vr</source>
+    <file>html/mech_conveyor_vr.html</file>
+    <type>model</type>
+    <dependency>Virtual Reality Toolbox</dependency>
+  </demoitem>
+  <demoitem>
+    <label>Robot Arm with Virtual Reality Scene</label>
+    <source>mech_robot_vr</source>
+    <file>html/mech_robot_vr.html</file>
+    <type>model</type>
+    <dependency>Virtual Reality Toolbox</dependency>
+  </demoitem>
+</demosection>
+
+</demos>

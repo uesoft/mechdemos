@@ -1,0 +1,1274 @@
+Library {
+  Name			  "mech_airbag_vrlib"
+  Version		  7.1
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Sat Sep 24 16:26:14 2005"
+  Creator		  "arnav"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "batserve"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Feb  8 19:04:21 2008"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  ConfigurationManager	  "None"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      Selector
+      NumberOfDimensions      "1"
+      IndexMode		      "One-based"
+      InputPortWidth	      "-1"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Stop
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      RelationalOperator
+      Operator		      ">="
+      InputSameDT	      on
+      LogicOutDataTypeMode    "Logical (see Configuration Parameters: Optimization)"
+      LogicDataType	      "uint(8)"
+      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "mech_airbag_vrlib"
+    Location		    [32, 122, 391, 337]
+    Open		    off
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "mech_airbag_vranim"
+      Ports		      []
+      Position		      [140, 35, 180, 95]
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"mech_airbag_vranim"
+	Location		[113, 98, 969, 623]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [355, 560, 385, 590]
+	  ShowName		  off
+	  Value			  "-2"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  Position		  [725, 158, 770, 172]
+	  ShowName		  off
+	  Value			  "[1 0 0]"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant2"
+	  Position		  [725, 228, 770, 242]
+	  ShowName		  off
+	  Value			  "[1 0 0]"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant3"
+	  Position		  [750, 438, 800, 452]
+	  ShowName		  off
+	  Value			  "[1 0 0]"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant4"
+	  Position		  [770, 368, 815, 382]
+	  ShowName		  off
+	  Value			  "[1 0 0]"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [165, 200, 225, 220]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Ankle"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From1"
+	  Position		  [670, 245, 730, 265]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Ankle"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From10"
+	  Position		  [420, 175, 480, 195]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Neck"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From2"
+	  Position		  [645, 550, 740, 570]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Vehicle_position"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From3"
+	  Position		  [25, 69, 125, 91]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Vehicle_position"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From4"
+	  Position		  [515, 280, 580, 300]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Lower_legs"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From5"
+	  Position		  [170, 150, 230, 170]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Knee"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From6"
+	  Position		  [485, 490, 545, 510]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Upper_legs"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From7"
+	  Position		  [370, 235, 430, 255]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Hip"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From8"
+	  Position		  [555, 350, 625, 370]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Upper_body"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From9"
+	  Position		  [510, 139, 590, 161]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Head_position"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1]
+	  Position		  [790, 121, 795, 159]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux1"
+	  Ports			  [2, 1]
+	  Position		  [790, 226, 795, 264]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux10"
+	  Ports			  [2, 1]
+	  Position		  [790, 51, 795, 89]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux11"
+	  Ports			  [2, 1]
+	  Position		  [475, 86, 480, 124]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux2"
+	  Ports			  [2, 1]
+	  Position		  [835, 436, 840, 474]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux3"
+	  Ports			  [2, 1]
+	  Position		  [835, 366, 840, 404]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux4"
+	  Ports			  [2, 1]
+	  Position		  [790, 156, 795, 194]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux5"
+	  Ports			  [2, 1]
+	  Position		  [835, 331, 840, 369]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux6"
+	  Ports			  [2, 1]
+	  Position		  [835, 401, 840, 439]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux7"
+	  Ports			  [2, 1]
+	  Position		  [835, 471, 840, 509]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux8"
+	  Ports			  [2, 1]
+	  Position		  [790, 191, 795, 229]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux9"
+	  Ports			  [2, 1]
+	  Position		  [790, 261, 795, 299]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator"
+	  Position		  [465, 552, 495, 583]
+	  ShowName		  off
+	  Operator		  "<="
+	  ZeroCross		  off
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector"
+	  Ports			  [1, 1]
+	  Position		  [685, 137, 715, 163]
+	  ShowName		  off
+	  InputPortWidth	  "3"
+	  IndexOptions		  "Index vector (dialog)"
+	  Indices		  "[2 3]"
+	  OutputSizes		  "1"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector1"
+	  Ports			  [1, 1]
+	  Position		  [730, 347, 765, 373]
+	  ShowName		  off
+	  InputPortWidth	  "3"
+	  IndexOptions		  "Index vector (dialog)"
+	  Indices		  "[2 3]"
+	  OutputSizes		  "1"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector2"
+	  Ports			  [1, 1]
+	  Position		  [710, 418, 740, 442]
+	  ShowName		  off
+	  InputPortWidth	  "3"
+	  IndexOptions		  "Index vector (dialog)"
+	  Indices		  "[2 3]"
+	  OutputSizes		  "1"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector3"
+	  Ports			  [1, 1]
+	  Position		  [735, 488, 770, 512]
+	  ShowName		  off
+	  InputPortWidth	  "3"
+	  IndexOptions		  "Index vector (dialog)"
+	  Indices		  "[2 3]"
+	  OutputSizes		  "1"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector4"
+	  Ports			  [1, 1]
+	  Position		  [685, 208, 715, 232]
+	  ShowName		  off
+	  InputPortWidth	  "3"
+	  IndexOptions		  "Index vector (dialog)"
+	  Indices		  "[2 3]"
+	  OutputSizes		  "1"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector5"
+	  Ports			  [1, 1]
+	  Position		  [690, 278, 720, 302]
+	  ShowName		  off
+	  InputPortWidth	  "3"
+	  IndexOptions		  "Index vector (dialog)"
+	  Indices		  "[2 3]"
+	  OutputSizes		  "1"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector6"
+	  Ports			  [1, 1]
+	  Position		  [695, 68, 725, 92]
+	  ShowName		  off
+	  InputPortWidth	  "3"
+	  IndexOptions		  "Index vector (dialog)"
+	  Indices		  "[2 3]"
+	  OutputSizes		  "1"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector7"
+	  Ports			  [1, 1]
+	  Position		  [365, 103, 400, 127]
+	  ShowName		  off
+	  InputPortWidth	  "3"
+	  IndexOptions		  "Index vector (dialog)"
+	  Indices		  "[2 3]"
+	  OutputSizes		  "1"
+	}
+	Block {
+	  BlockType		  Stop
+	  Name			  "Stop Simulation\nwhen torso bends too far"
+	  Position		  [535, 552, 570, 588]
+	  BackgroundColor	  "red"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1]
+	  Position		  [460, 200, 480, 220]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  Ports			  [2, 1]
+	  Position		  [260, 200, 280, 220]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "++|"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum3"
+	  Ports			  [2, 1]
+	  Position		  [660, 175, 680, 195]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum4"
+	  Ports			  [2, 1]
+	  Position		  [140, 70, 160, 90]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "++|"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "VR Signal Expander"
+	  Ports			  [1, 1]
+	  Position		  [770, 546, 825, 574]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "vrlib/VR Signal Expander"
+	  SourceType		  "VR Signal Expander"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  outwidth		  "3"
+	  outidx		  "[2 3 1]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "VR Signal Expander1"
+	  Ports			  [1, 1]
+	  Position		  [595, 276, 650, 304]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "vrlib/VR Signal Expander"
+	  SourceType		  "VR Signal Expander"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  outwidth		  "3"
+	  outidx		  "[2 3 1]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "VR Signal Expander2"
+	  Ports			  [1, 1]
+	  Position		  [190, 66, 245, 94]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "vrlib/VR Signal Expander"
+	  SourceType		  "VR Signal Expander"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  outwidth		  "3"
+	  outidx		  "[2 3 1]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "VR Signal Expander3"
+	  Ports			  [1, 1]
+	  Position		  [580, 486, 635, 514]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "vrlib/VR Signal Expander"
+	  SourceType		  "VR Signal Expander"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  outwidth		  "3"
+	  outidx		  "[2 3 1]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "VR Signal Expander4"
+	  Ports			  [1, 1]
+	  Position		  [640, 346, 695, 374]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "vrlib/VR Signal Expander"
+	  SourceType		  "VR Signal Expander"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  outwidth		  "3"
+	  outidx		  "[2 3 1]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "VR Signal Expander5"
+	  Ports			  [1, 1]
+	  Position		  [605, 136, 660, 164]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "vrlib/VR Signal Expander"
+	  SourceType		  "VR Signal Expander"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  outwidth		  "3"
+	  outidx		  "[2 3 1]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "VR Sink1"
+	  Ports			  [15]
+	  Position		  [875, 54, 1025, 576]
+	  SourceBlock		  "vrlib/VR Sink"
+	  SourceType		  "Virtual Reality Sink"
+	  SampleTime		  "0.05"
+	  ViewEnable		  "on"
+	  RemoteChange		  "off"
+	  RemoteView		  "off"
+	  FieldsWritten		  "footL.translation#footR.translation#headCOG.translation#headROT.rotation#lowerlegL.translation#lowerlegLROT.rotation#lowerlegR.translation#lowerlegRROT.rotation#torsoCOG.translation#torsoROT.rotation#upperlegL.translation#upperlegLROT.rotation#upperlegR.translation#upperlegRROT.rotation#vehicle.translation"
+	  WorldFileName		  "mech_airbag_world.wrl"
+	  WorldDescription	  "Passenger Collision Model"
+	  AutoView		  "off"
+	  VideoDimensions	  "[]"
+	  FigureProperties	  "{}"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "airbag\nsize1"
+	  Position		  [740, 122, 770, 138]
+	  ShowName		  off
+	  Value			  "167"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "airbag\nsize2"
+	  Position		  [775, 332, 805, 348]
+	  ShowName		  off
+	  Value			  "153"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "airbag\nsize3"
+	  Position		  [780, 403, 810, 417]
+	  ShowName		  off
+	  Value			  "117"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "airbag\nsize4"
+	  Position		  [780, 473, 810, 487]
+	  ShowName		  off
+	  Value			  "189"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "airbag\nsize5"
+	  Position		  [745, 193, 775, 207]
+	  ShowName		  off
+	  Value			  "117"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "airbag\nsize6"
+	  Position		  [735, 262, 765, 278]
+	  ShowName		  off
+	  Value			  "189"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "airbag\nsize7"
+	  Position		  [735, 50, 765, 70]
+	  ShowName		  off
+	  Value			  "117"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "airbag\nsize8"
+	  Position		  [410, 87, 440, 103]
+	  ShowName		  off
+	  Value			  "189"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "airbag\nsize9"
+	  Position		  [90, 26, 130, 54]
+	  ShowName		  off
+	  Value			  "[32 -162 0]"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  DstBlock		  "Mux4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mux4"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Mux3"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink1"
+	  DstPort		  10
+	}
+	Line {
+	  SrcBlock		  "airbag\nsize1"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Selector1"
+	  SrcPort		  1
+	  DstBlock		  "Mux5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "airbag\nsize3"
+	  SrcPort		  1
+	  DstBlock		  "Mux6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "airbag\nsize4"
+	  SrcPort		  1
+	  DstBlock		  "Mux7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "airbag\nsize6"
+	  SrcPort		  1
+	  DstBlock		  "Mux9"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector4"
+	  SrcPort		  1
+	  DstBlock		  "Mux8"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Selector5"
+	  SrcPort		  1
+	  DstBlock		  "Mux9"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Selector7"
+	  SrcPort		  1
+	  DstBlock		  "Mux11"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "airbag\nsize8"
+	  SrcPort		  1
+	  DstBlock		  "Mux11"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "airbag\nsize7"
+	  SrcPort		  1
+	  DstBlock		  "Mux10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Mux1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From2"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Signal Expander"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From3"
+	  SrcPort		  1
+	  DstBlock		  "Sum4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum4"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Signal Expander2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "airbag\nsize9"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  DstBlock		  "Sum4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From4"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Signal Expander1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From7"
+	  SrcPort		  1
+	  Points		  [35, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From8"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Signal Expander4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From9"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Signal Expander5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From10"
+	  SrcPort		  1
+	  DstBlock		  "Sum3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector6"
+	  SrcPort		  1
+	  DstBlock		  "Mux10"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "VR Signal Expander2"
+	  SrcPort		  1
+	  Points		  [0, 0; 20, 0]
+	  Branch {
+	    Points		    [0, 35]
+	    DstBlock		    "Selector7"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Selector6"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "VR Signal Expander5"
+	  SrcPort		  1
+	  DstBlock		  "Selector"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux10"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux11"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  DstBlock		  "Mux4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux8"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink1"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "airbag\nsize5"
+	  SrcPort		  1
+	  DstBlock		  "Mux8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux9"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink1"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  Points		  [0, 0; 40, 0]
+	  Branch {
+	    DstBlock		    "VR Sink1"
+	    DstPort		    6
+	  }
+	  Branch {
+	    Points		    [0, 70]
+	    DstBlock		    "VR Sink1"
+	    DstPort		    8
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant2"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant4"
+	  SrcPort		  1
+	  DstBlock		  "Mux3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "VR Signal Expander1"
+	  SrcPort		  1
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    DstBlock		    "Selector5"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -70]
+	    DstBlock		    "Selector4"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mux5"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink1"
+	  DstPort		  9
+	}
+	Line {
+	  SrcBlock		  "airbag\nsize2"
+	  SrcPort		  1
+	  DstBlock		  "Mux5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "VR Signal Expander4"
+	  SrcPort		  1
+	  DstBlock		  "Selector1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant3"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Mux2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux2"
+	  SrcPort		  1
+	  Points		  [0, 0; 10, 0]
+	  Branch {
+	    DstBlock		    "VR Sink1"
+	    DstPort		    12
+	  }
+	  Branch {
+	    Points		    [0, 70]
+	    DstBlock		    "VR Sink1"
+	    DstPort		    14
+	  }
+	}
+	Line {
+	  SrcBlock		  "From5"
+	  SrcPort		  1
+	  Points		  [35, 0]
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  Points		  [0, 0; 10, 0]
+	  Branch {
+	    DstBlock		    "Sum3"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 185]
+	    Branch {
+	      Points		      [-75, 0; 0, 165]
+	      DstBlock		      "Relational\nOperator"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Mux3"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  Points		  [0, 0; 60, 0]
+	  Branch {
+	    DstBlock		    "Sum1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 255]
+	    DstBlock		    "Mux2"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mux6"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink1"
+	  DstPort		  11
+	}
+	Line {
+	  SrcBlock		  "Selector2"
+	  SrcPort		  1
+	  DstBlock		  "Mux6"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mux7"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink1"
+	  DstPort		  13
+	}
+	Line {
+	  SrcBlock		  "Selector3"
+	  SrcPort		  1
+	  DstBlock		  "Mux7"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "VR Signal Expander"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink1"
+	  DstPort		  15
+	}
+	Line {
+	  SrcBlock		  "VR Signal Expander3"
+	  SrcPort		  1
+	  Points		  [0, 0; 35, 0]
+	  Branch {
+	    DstBlock		    "Selector3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -70]
+	    DstBlock		    "Selector2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "From6"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Signal Expander3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Stop Simulation\nwhen torso bends too far"
+	  DstPort		  1
+	}
+      }
+    }
+  }
+}

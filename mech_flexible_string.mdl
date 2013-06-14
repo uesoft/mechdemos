@@ -1,0 +1,2274 @@
+Model {
+  Name			  "mech_flexible_string"
+  Version		  7.1
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.60"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  Description		  "Vibrating String\n\nThis model simulates a flexible string, plucked at the center with an initial force and then allowed to vibrate freely. The string is also subject to its own weight in gravity."
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  InitFcn		  "\n%-----------------------------------------\n% Defined in the block mask now. I have left it here because it can be \n% used as a starting point of describing a material data file format\n%-----------------------------------------\nfBeamElement.material = 'Mild Steel';\n\n% Beam element density (Kg/m^3)\nfBeamElement.density = 7800;\n\n% Beam element Youngs Modulus (N/m^2)\nfBeamElement.youngsM = 210E6;\n\n% Wire diameter\nfBeamElement.diameter = 5E-4;\n\n% Beam element length (m)\nfBeamElement.length = 0.05;\n\n% Length of CG vector along length of beam (m)\nfBeamElement.cgLeng = fBeamElement.length/2;\n\n% Beam element direction (along X direction it is [1 0 0])\nfBeamElement.beamDir = [1 0 0];\n\n% Beam element Mass Moment of Inertia (Kg/m^2)\nfBeamElement.Inertia = [0.01 0 0;0 5.0 0;0 0 5.0]*0.5E-8;\n\n% Damping coefficient\nfBeamElement.matDamping = 0.5E-3;\n%----------------------------------------"
+  Created		  "Mon Dec 27 12:43:50 2004"
+  Creator		  "arnav"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "batserve"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Feb  7 20:34:27 2008"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement:60>"
+  ConfigurationManager	  "None"
+  UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts;"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.4.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.4.0"
+	  StartTime		  "0.0"
+	  StopTime		  "1.4"
+	  AbsTol		  "1e-4"
+	  FixedStep		  "0.005"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  2
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-2"
+	  SolverMode		  "Auto"
+	  Solver		  "ode15s"
+	  SolverName		  "ode15s"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Non-adaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.4.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "SpecifiedOutputTimes"
+	  OutputTimes		  "linspace(0,1.4,250)"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.4.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.4.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "none"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  StrictBusMsg		  "None"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.4.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  64
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "LittleEndian"
+	  TargetWordSize	  64
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "MATLAB Host"
+	  TargetUnknown		  off
+	  ProdEqTarget		  off
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.4.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferenceSigSizeVariationType "Always allowed"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.4.0"
+	  SystemTargetFile	  "rsim.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "rsim_default_tmf"
+	  Description		  "Rapid Simulation Target"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ProcessScript		  "rsim_make_rtw_hook"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  RTWCompilerOptimization "Off"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.4.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    RTW.RSimTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		13
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.4.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      AutosarCompliant	      off
+	      RSIM_SOLVER_SELECTION   "Auto"
+	      ExtMode		      off
+	      ExtModeTransport	      0
+	      ExtModeStaticAlloc      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTesting	      off
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RSIM_PARAMETER_LOADING  on
+	      RSIM_STORAGE_CLASS_AUTO on
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	SSC.SimscapeCC {
+	  $ObjectID		  11
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "Name"
+	    PropName		    "DisabledProps"
+	  }
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    1
+	    MECH.SimMechanicsCC {
+	      $ObjectID		      12
+	      Version		      "1.4.0"
+	      Name		      "SimMechanics"
+	      WarnOnRedundantConstraints off
+	      WarnOnSingularInitialAssembly off
+	      ShowCutJoints	      off
+	      VisOnUpdateDiagram      on
+	      VisDuringSimulation     on
+	      VisConfigFile	      "mech_flexible_string.mat"
+	    }
+	    PropName		    "Components"
+	  }
+	  Name			  "Simscape"
+	  EditingMode		  "Full"
+	  Version		  "1.0"
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  PhysicalModelingChecksum "2962908113"
+  PhysicalModelingParameterChecksum "883029867"
+  PhysicalModelingProducts "SimMechanics"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Actuator
+      SubClassName	      "unknown"
+      PortType		      "blob"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      FromWorkspace
+      VariableName	      "simulink_input"
+      SampleTime	      "-1"
+      Interpolate	      on
+      ZeroCross		      off
+      OutputAfterFinalValue   "Extrapolation"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "fixdt(1,16,0)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Goto
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Ground
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      PMComponent
+      SubClassName	      "unknown"
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Sensor
+      SubClassName	      "unknown"
+      PortType		      "blob"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      PMIOPort
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "mech_flexible_string"
+    Location		    [11, 82, 739, 360]
+    Open		    off
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "FlexibleString"
+      Ports		      [0, 0, 0, 0, 0, 2, 1]
+      Position		      [175, 26, 520, 64]
+      BackgroundColor	      "lightBlue"
+      DropShadow	      on
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"FlexibleString"
+	Location		[170, 405, 776, 544]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "FirstHalfOfString"
+	  Ports			  [0, 0, 0, 0, 0, 2, 1]
+	  Position		  [120, 23, 265, 67]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "FirstHalfOfString"
+	    Location		    [72, 137, 870, 292]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [80, 27, 145, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element1"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [200, 27, 265, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element2"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [325, 27, 390, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element3"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [450, 27, 515, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element4"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [575, 27, 640, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element5"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [705, 27, 770, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element6"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [825, 27, 890, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element7"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [945, 27, 1010, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element8"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [1070, 27, 1135, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element9"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [1190, 27, 1255, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      PMIOPort
+	      Name		      "Base"
+	      Position		      [25, 28, 55, 42]
+	      Port		      "1"
+	      Side		      "Left"
+	    }
+	    Block {
+	      BlockType		      PMIOPort
+	      Name		      "Tip"
+	      Position		      [1310, 38, 1340, 52]
+	      Orientation	      "left"
+	      Port		      "2"
+	      Side		      "Right"
+	    }
+	    Block {
+	      BlockType		      PMIOPort
+	      Name		      "Pluck"
+	      Position		      [1245, 123, 1275, 137]
+	      Orientation	      "left"
+	      NamePlacement	      "alternate"
+	      Port		      "3"
+	      Side		      "Left"
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element"
+	      SrcPort		      RConn1
+	      Points		      [10, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element1"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element1"
+	      SrcPort		      RConn1
+	      Points		      [20, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element2"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element2"
+	      SrcPort		      RConn1
+	      Points		      [15, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element3"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element3"
+	      SrcPort		      RConn1
+	      Points		      [15, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element4"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element4"
+	      SrcPort		      RConn1
+	      Points		      [15, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element5"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element5"
+	      SrcPort		      RConn1
+	      Points		      [10, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element6"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element6"
+	      SrcPort		      RConn1
+	      Points		      [10, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element7"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element7"
+	      SrcPort		      RConn1
+	      Points		      [15, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element8"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element8"
+	      SrcPort		      RConn1
+	      Points		      [10, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element9"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Base"
+	      SrcPort		      RConn1
+	      DstBlock		      "Flexible Wire Element"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Tip"
+	      SrcPort		      RConn1
+	      DstBlock		      "Flexible Wire Element9"
+	      DstPort		      RConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element9"
+	      SrcPort		      LConn2
+	      Points		      [-10, 0; 0, 75]
+	      DstBlock		      "Pluck"
+	      DstPort		      RConn1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Revolute"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [480, 35, 530, 85]
+	  DialogController	  "MECH.DynMechDlgSource"
+	  SourceBlock		  "mblibv1/Joints/Revolute"
+	  SourceType		  "Revolute"
+	  PhysicalDomain	  "mechanical"
+	  SubClassName		  "Unknown"
+	  LeftPortType		  "blob"
+	  RightPortType		  "blob"
+	  LConnTagsString	  "__newl0"
+	  RConnTagsString	  "__newr0"
+	  NumSAPorts		  "0"
+	  CutJoint		  "off"
+	  MarkAsCut		  "off"
+	  Primitives		  "revolute"
+	  PrimitiveProps	  "R1$INERTIAL$[0 0 1]$revolute"
+	  ClassName		  "Joint"
+	  DialogClass		  "JointBlock"
+	  R1Axis		  "[0 0 1]"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "SecondHalfOfString"
+	  Ports			  [0, 0, 0, 0, 0, 2, 1]
+	  Position		  [295, 34, 445, 81]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "SecondHalfOfString"
+	    Location		    [123, 145, 970, 288]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [80, 27, 145, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element1"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [200, 27, 265, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element2"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [325, 27, 390, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element3"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [450, 27, 515, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element4"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [575, 27, 640, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element5"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [705, 27, 770, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element6"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [825, 27, 890, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element7"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [945, 27, 1010, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element8"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [1070, 27, 1135, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flexible Wire Element9"
+	      Ports		      [0, 0, 0, 0, 0, 2, 1]
+	      Position		      [1190, 27, 1255, 63]
+	      SourceBlock	      "mech_flexible_element_lib/Flexible Wire Element"
+	      SourceType	      "Flexible wire element"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      material		      "Mild Steel"
+	      density		      "fBeamElement.density"
+	      wireDia		      "fBeamElement.diameter"
+	      length		      "fBeamElement.length"
+	      cgLeng		      "fBeamElement.cgLeng"
+	      beamDir		      "fBeamElement.beamDir"
+	      Inertia		      "fBeamElement.Inertia"
+	      youngsM		      "fBeamElement.youngsM"
+	      matDamping	      "fBeamElement.matDamping"
+	    }
+	    Block {
+	      BlockType		      PMIOPort
+	      Name		      "Base"
+	      Position		      [25, 28, 55, 42]
+	      Port		      "1"
+	      Side		      "Left"
+	    }
+	    Block {
+	      BlockType		      PMIOPort
+	      Name		      "Tip"
+	      Position		      [1305, 38, 1335, 52]
+	      Orientation	      "left"
+	      Port		      "2"
+	      Side		      "Right"
+	    }
+	    Block {
+	      BlockType		      PMIOPort
+	      Name		      "Pluck"
+	      Position		      [1245, 123, 1275, 137]
+	      Orientation	      "left"
+	      NamePlacement	      "alternate"
+	      Port		      "3"
+	      Side		      "Left"
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Tip"
+	      SrcPort		      RConn1
+	      DstBlock		      "Flexible Wire Element9"
+	      DstPort		      RConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Base"
+	      SrcPort		      RConn1
+	      Points		      [0, 0]
+	      DstBlock		      "Flexible Wire Element"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element8"
+	      SrcPort		      RConn1
+	      Points		      [10, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element9"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element7"
+	      SrcPort		      RConn1
+	      Points		      [15, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element8"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element6"
+	      SrcPort		      RConn1
+	      Points		      [10, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element7"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element5"
+	      SrcPort		      RConn1
+	      Points		      [10, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element6"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element4"
+	      SrcPort		      RConn1
+	      Points		      [15, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element5"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element3"
+	      SrcPort		      RConn1
+	      Points		      [15, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element4"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element2"
+	      SrcPort		      RConn1
+	      Points		      [15, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element3"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element1"
+	      SrcPort		      RConn1
+	      Points		      [20, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element2"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element"
+	      SrcPort		      RConn1
+	      Points		      [10, 0; 0, -10]
+	      DstBlock		      "Flexible Wire Element1"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Flexible Wire Element"
+	      SrcPort		      LConn2
+	      Points		      [-5, 0; 0, 75]
+	      DstBlock		      "Pluck"
+	      DstPort		      RConn1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "LeftEnd"
+	  Position		  [25, 28, 55, 42]
+	  Port			  "1"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "Pluck"
+	  Position		  [25, 83, 55, 97]
+	  Port			  "2"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "RIghtEnd"
+	  Position		  [560, 53, 590, 67]
+	  Orientation		  "left"
+	  Port			  "3"
+	  Side			  "Right"
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "SecondHalfOfString"
+	  SrcPort		  RConn1
+	  DstBlock		  "Revolute"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "FirstHalfOfString"
+	  SrcPort		  RConn1
+	  DstBlock		  "SecondHalfOfString"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "LeftEnd"
+	  SrcPort		  RConn1
+	  DstBlock		  "FirstHalfOfString"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Pluck"
+	  SrcPort		  RConn1
+	  Points		  [0, -35]
+	  DstBlock		  "FirstHalfOfString"
+	  DstPort		  LConn2
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "RIghtEnd"
+	  SrcPort		  RConn1
+	  DstBlock		  "Revolute"
+	  DstPort		  RConn1
+	}
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain"
+      Position		      [140, 140, 170, 170]
+      Gain		      "-40"
+      ParameterDataTypeMode   "Inherit via internal rule"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ground1"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [90, 15, 130, 55]
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Bodies/Ground"
+      SourceType	      "Ground"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      LeftPortType	      "env"
+      RightPortType	      "workingframe"
+      PhysicalDomain	      "Mechanical"
+      DialogClass	      "GroundBlock"
+      ClassName		      "Ground"
+      CoordPosition	      "[0 0 0]"
+      CoordPositionUnits      "m"
+      StateVectorMgrId	      "-1"
+      MachineId		      "[0 0]"
+      ShowEnvPort	      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ground2"
+      Ports		      [0, 0, 0, 0, 0, 0, 1]
+      Position		      [560, 25, 600, 65]
+      Orientation	      "left"
+      UserDataPersistent      on
+      UserData		      "DataTag1"
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Bodies/Ground"
+      SourceType	      "Ground"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      LeftPortType	      "env"
+      RightPortType	      "workingframe"
+      PhysicalDomain	      "Mechanical"
+      DialogClass	      "GroundBlock"
+      ClassName		      "Ground"
+      CoordPosition	      "[1 0 0]"
+      CoordPositionUnits      "m"
+      StateVectorMgrId	      "-1"
+      MachineId		      "[0 0]"
+      ShowEnvPort	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Machine\nEnvironment"
+      Tag		      "Factory ground"
+      Ports		      [0, 0, 0, 0, 0, 0, 1]
+      Position		      [20, 25, 60, 45]
+      DialogController	      "MECH.DialogSource"
+      SourceBlock	      "mblibv1/Bodies/Machine\nEnvironment"
+      SourceType	      "Machine Environment"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PortType		      "env"
+      PhysicalDomain	      "Mechanical"
+      ClassName		      "Environment"
+      DialogTemplateClass     "MECH.MachineEnvironment"
+      SyncWhenCopied	      "off"
+      Gravity		      "[0 -9.81 0]"
+      GravityUnits	      "m/s^2"
+      GravityAsSignal	      off
+      Dimensionality	      "Auto-detect"
+      AnalysisType	      "Forward dynamics"
+      LinearAssemblyTolerance "1e-3"
+      LinearAssemblyToleranceUnits "m"
+      AngularAssemblyTolerance "1e-3"
+      AngularAssemblyToleranceUnits "rad"
+      ConstraintSolverType    "Machine precision"
+      ConstraintRelTolerance  "1e-4"
+      ConstraintAbsTolerance  "1e-4"
+      UseRobustSingularityHandling off
+      RedundancyAnalysisToleranceType "Automatically select tolerance"
+      RedundancyAnalysisTolerance "1e-14"
+      StatePerturbationType   "Fixed"
+      PerturbationSize	      "1e-5"
+      VisualizeMachine	      on
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Signal Builder"
+      Tag		      "STV Subsys"
+      Ports		      [0, 1]
+      Position		      [25, 135, 100, 175]
+      AncestorBlock	      "mech_flexible_element_lib/FlexibleElementActuator/Signal Builder"
+      CopyFcn		      "sigbuilder_block('copy');"
+      DeleteFcn		      "sigbuilder_block('delete');"
+      LoadFcn		      "sigbuilder_block('load');"
+      ModelCloseFcn	      "sigbuilder_block('modelClose');"
+      PreSaveFcn	      "sigbuilder_block('preSave');"
+      StartFcn		      "sigbuilder_block('start');"
+      StopFcn		      "sigbuilder_block('stop');"
+      NameChangeFcn	      "sigbuilder_block('namechange');"
+      ClipboardFcn	      "sigbuilder_block('clipboard');"
+      OpenFcn		      "sigbuilder_block('open',[63.75 88.5 550.5 399.75 ]);"
+      CloseFcn		      "sigbuilder_block('close');"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "Sigbuilder block"
+      MaskDescription	      "Sigbuilder GUI"
+      MaskInitialization      "if ~strcmp(get_param(bdroot(gcbh),'SimulationStatus'),'stopped') tuvar = sigbuilder_block('maskInit'); end"
+      MaskDisplay	      "plot(0,0,100,100,[10,10,40,40,10],[80,20,20,80,80],[40,10],[50,50], [40,27,10],[65,72,56],[40,25,25,10],[28,28,43,43]);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "port"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Signal Builder"
+	Location		[480, 85, 980, 386]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Tag			  "STV Demux"
+	  Ports			  [1, 1]
+	  Position		  [150, 30, 160, 600]
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  FromWorkspace
+	  Name			  "FromWs"
+	  Tag			  "STV FromWs"
+	  Position		  [30, 300, 115, 350]
+	  VariableName		  "tuvar"
+	  SampleTime		  "0"
+	  ZeroCross		  on
+	  SigBuilderData	  "DataTag2"
+	  VnvData		  "DataTag3"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Signal 1"
+	  Tag			  "STV Outport"
+	  Position		  [280, 30, 300, 40]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "FromWs"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -10]
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  Points		  [50, 0; 0, -280]
+	  DstBlock		  "Signal 1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "StringPlucker"
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [205, 132, 310, 178]
+      ForegroundColor	      "blue"
+      DropShadow	      on
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"StringPlucker"
+	Location		[33, 405, 654, 648]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Yforce"
+	  Position		  [15, 63, 45, 77]
+	  NamePlacement		  "alternate"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Body Actuator"
+	  Ports			  [1, 0, 0, 0, 0, 0, 1]
+	  Position		  [170, 50, 210, 90]
+	  DialogController	  "MECH.DynMechDlgSource"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
+	  SourceType		  "Body Actuator"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  ActuationStyle	  "Force"
+	  AngleUnits		  "deg"
+	  ArcVelocityUnits	  "deg/s"
+	  ArcAccelerationUnits	  "deg/s^2"
+	  CoordPositionUnits	  "m"
+	  VelocityUnits		  "m/s"
+	  AccelerationUnits	  "m/s^2"
+	  ForceUnits		  "N"
+	  TorqueUnits		  "N-m"
+	  ActiveIO		  "on"
+	  Width			  "3"
+	  ClassName		  "BodyActuatorForceTorque"
+	  DialogClass		  "MechanicalActuatorBlock"
+	  ReferenceFrame	  "Absolute (World)"
+	  Angle			  "off"
+	  CoordPosition		  "on"
+	  Force			  "on"
+	  Torque		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Body Sensor1"
+	  Ports			  [0, 1, 0, 0, 0, 1]
+	  Position		  [280, 150, 320, 190]
+	  DialogController	  "MECH.DynMechDlgSource"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
+	  SourceType		  "Body Sensor"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  Muxed			  "on"
+	  Pose			  "off"
+	  Angle			  "on"
+	  AngleUnits		  "deg"
+	  ArcVelocity		  "off"
+	  ArcVelocityUnits	  "rad/s"
+	  ArcAcceleration	  "off"
+	  ArcAccelerationUnits	  "deg/s^2"
+	  CoordPosition		  "on"
+	  CoordPositionUnits	  "m"
+	  Velocity		  "off"
+	  VelocityUnits		  "m/s"
+	  Acceleration		  "off"
+	  AccelerationUnits	  "m/s^2"
+	  Quaternion		  "on"
+	  QuaternionDT		  "off"
+	  QuaternionDDT		  "off"
+	  QuaternionUnits	  "off"
+	  OutputVector		  "[ 3 ]"
+	  ActiveIO		  "on"
+	  Width			  "3"
+	  ClassName		  "BodySensor"
+	  DialogClass		  "MechanicalSensorBlock"
+	  ReferenceFrame	  "Absolute (World)"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [25, 85, 55, 115]
+	  ShowName		  off
+	  Value			  "0"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  Position		  [498, 75, 522, 100]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Value			  "0.5"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 3]
+	  Position		  [355, 126, 365, 214]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "3"
+	  DisplayOption		  "bar"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Elastic Deformation"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "String Position in the Middle"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mechanical\nBranching\nBar"
+	  Ports			  [0, 0, 0, 0, 0, 1, 2]
+	  Position		  [300, 57, 310, 108]
+	  Orientation		  "left"
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  DialogController	  "MECH.DynMechDlgSource"
+	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
+	  SourceType		  "Mechanical Branching Bar"
+	  PhysicalDomain	  "mechanical"
+	  SubClassName		  "Unknown"
+	  LeftPortType		  "blob"
+	  RightPortType		  "blob"
+	  LConnTagsString	  "_newl0"
+	  RConnTagsString	  "SA0|SA1"
+	  ClassName		  "BranchingBar"
+	  DialogClass		  "MechanicalBranchingBarBlock"
+	  NumSAPorts		  "2"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [3, 1]
+	  Position		  [110, 25, 120, 115]
+	  ShowName		  off
+	  Inputs		  "3"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Scope"
+	  Ports			  [2]
+	  Position		  [560, 126, 600, 184]
+	  Floating		  off
+	  Location		  [11, 381, 661, 677]
+	  Open			  off
+	  NumInputPorts		  "2"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "Elastic deformation (m)"
+	    axes2		    "Vertical string displacement at the middle (m)"
+	  }
+	  TimeRange		  "1.4"
+	  YMin			  "-0.02~-1"
+	  YMax			  "0.01~0.5"
+	  DataFormat		  "StructureWithTime"
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1]
+	  Position		  [500, 130, 520, 150]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  Position		  [400, 190, 420, 210]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "ToString"
+	  Position		  [390, 78, 420, 92]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  Port			  "1"
+	  Side			  "Right"
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Body Actuator"
+	  SrcPort		  RConn1
+	  DstBlock		  "Mechanical\nBranching\nBar"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Mechanical\nBranching\nBar"
+	  SrcPort		  RConn2
+	  Points		  [-40, 0; 0, 75]
+	  DstBlock		  "Body Sensor1"
+	  DstPort		  LConn1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [0, 0; 10, 0]
+	  Branch {
+	    DstBlock		    "Mux"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, -60]
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Body Actuator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Yforce"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Body Sensor1"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "String Position in the Middle"
+	  Labels		  [0, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "Scope"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Elastic Deformation"
+	  Labels		  [0, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Mechanical\nBranching\nBar"
+	  SrcPort		  LConn1
+	  DstBlock		  "ToString"
+	  DstPort		  RConn1
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Scope"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Machine\nEnvironment"
+      SrcPort		      RConn1
+      DstBlock		      "Ground1"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Ground1"
+      SrcPort		      RConn1
+      DstBlock		      "FlexibleString"
+      DstPort		      LConn1
+    }
+    Line {
+      SrcBlock		      "Signal Builder"
+      SrcPort		      1
+      DstBlock		      "Gain"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gain"
+      SrcPort		      1
+      DstBlock		      "StringPlucker"
+      DstPort		      1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "FlexibleString"
+      SrcPort		      RConn1
+      DstBlock		      "Ground2"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "FlexibleString"
+      SrcPort		      LConn2
+      Points		      [-15, 0; 0, 50; 210, 0; 0, 50]
+      DstBlock		      "StringPlucker"
+      DstPort		      RConn1
+    }
+    Annotation {
+      Name		      "Vibrating String"
+      Position		      [535, 113]
+      FontName		      "Arial"
+      FontSize		      16
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "This demo illustrates a flexible string, plucked at the center\nwith an initial force and then allowed to vibrate freely.\nThe string is also subject to its own weight under gravity.\n\nThe model uses scripts, data structures, and library blocks\nto configure the finite elements composing the string.\n\n- Reference -\n\nKlaus-Jurgen Bathe, Finite Element Procedures, Prentice Hall Inc, 1996"
+      Position		      [539, 201]
+      FontName		      "Arial"
+    }
+  }
+}
+MatData {
+  NumRecords		  4
+  DataRecord {
+    Tag			    DataTag3
+    Data		    "  %)30     .    R ,   8    (     @         %    \"     $    !     0         %  0 $0    $   #,    =F5R:69Y0FQK4&%T:',   !V97)I9GE\";&M(86YD;&5S '9N=DUG<DED>           86-T:79E1W)O=7        !R97%$:7-P4')C;G0      &)L:T1I<W!-;V1E        9W)O=7!#;G0           !G<F]U<%)E<4-N=        &=R;W5P1$]/4E-I9       ;6]D96Q(              !B;&]C:T@              &]V97)I9&53971T:6YG<P        X    P    !@    @    &          4    (               !          D         #@   #     &    \"     8         !0    @               $         \"0         .    ,     8    (    !@         %    \"                0         )          X    X    !@    @    &          4    (     0    $    !          D    (            \\#\\.    ,     8    (    !@         %    \"                0         )          X    P    !@    @    &          4    (               !          D         #@   #@    &    \"     8         !0    @    !     0    $         \"0    @           #P/PX    P    !@    @    &          4    (               !          D         #@   #     &    \"     8         !0    @               $         \"0         .    .     8    (    !@         %    \"     $    !     0         )    \"          N %= #@   #@    &    \"     8         !0    @    !     0    $         \"0    @         -R!F0 X    P    !@    @    &          4    (               !          D         "
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    R L   8    (     @         %    \"     $    !     0         %  0 #     $   !(    9W)I9%-E='1I;F< 8VAA;FYE;',     87AE<P          8V]M;6]N        9&%T85-E=       9&%T85-E=$ED>   #@   #     &    \"     0         !0    @    !     @    $         $  \" &]N   .    & 4   8    (     @         %    \"     $    !     0         %  0 \"@    $   \"\"    >$1A=&$      'E$871A      !S=&5P6       <W1E<%D      'E-:6X       !Y36%X        8V]L;W(      &QI;F53='EL90!L:6YE5VED=&@ ;&%B96P      &]U=$EN9&5X  !A;&Q81&%T80  86QL641A=&$           X   !H    !@    @    &          4    (     0    <    !          D    X              \":F9F9F9FY/S,S,S,S,],_,S,S,S,STS^:F9F9F9G9/\\W,S,S,S-P_        )$ .    :     8    (    !@         %    \"     $    '     0         )    .                                 #P/P       / _        \\#\\                     #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @    &          4    (     0    $    !          D    (               .    ,     8    (    !@         %    \"                0         )          X    P    !@    @    &          4    (               !          D         #@   $@    &    \"     8         !0    @    !     P    $         \"0   !@   !\"/NC9K/KJ/P                     .    ,     8    (    !          %    \"     $    !     0         0  $ +0    X    X    !@    @    &          4    (     0    $    !          D    (            ^#\\.    .     8    (    !          %    \"     $    (     0         0    \"    %-I9VYA;\" Q#@   #@    &    \"     8         !0    @    !     0    $         \"0    @           #P/PX   \"8    !@    @    !          4    (     0    $    !          X   !H    !@    @    &          4    (     0    <    !          D    X              \":F9F9F9FY/S,S,S,S,],_,S,S,S,STS^:F9F9F9G9/\\W,S,S,S-P_        )$ .    F     8    (     0         %    \"     $    !     0         .    :     8    (    !@         %    \"     $    '     0         )    .                                 #P/P       / _        \\#\\                     #@   + !   &    \"     (         !0    @    !     0    $         !0 $  L    !    -P   &-H86YN96QS    >4QI;0        !L86)E;%!O<P   &QA8F5L2       ;&%B96Q0871C:   #@   #@    &    \"     8         !0    @    !     0    $         \"0    @           #P/PX   !     !@    @    &          4    (     0    (    !          D    0    FIF9F9F9N;\\T,S,S,S/S/PX    P    !@    @    $          4    (     0    (    !         !   @!43   #@   #@    &    \"     8         !0    @    !     0    $         \"0    @        H !RZ0 X    X    !@    @    &          4    (     0    $    !          D    (        ( !HN4 .    : (   8    (     @         %    \"     $    !     0         %  0 #@    $   !B    9&ES<%1I;64       !D:7-P36]D90       &UI;E1I;64         ;6%X5&EM90        !A9G1E<D9I;F%L4W1R '-A;7!L951I;64     >F5R;T-R;W-S               .    0     8    (    !@         %    \"     $    \"     0         )    $                       )$ .    .     8    (    !@         %    \"     $    !     0         )    \"            / _#@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @    &          4    (     0    $    !          D    (            )$ .    0     8    (    !          %    \"     $    +     0         0    \"P   $5X=')A<&]L871E       .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #     &    \"     0         !0    @    !     @    $         $  \" &]N   .    @ $   8    (     @         %    \"     $    !     0         %  0 #@    $    X    86-T:79E1&ES<$ED> !T:6UE4F%N9V4      &YA;64             9&ES<&QA>5)A;F=E   .    .     8    (    !@         %    \"     $    !     0         )    \"            / _#@   $     &    \"     8         !0    @    !     @    $         \"0   !                       \"1 #@   #@    &    \"     0         !0    @    !    !P    $         $     <   !'<F]U<\" Q  X   !     !@    @    &          4    (     0    (    !          D    0                       D0 X    X    !@    @    &          4    (     0    $    !          D    (            \\#\\"
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    4     8    (    !          %    \"     $    <     0         0    '    &UE8VA?9FQE>&EB;&5?<W1R:6YG+T=R;W5N9#(     "
+  }
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    4     8    (    !          %    \"     $    <     0         0    '    &UE8VA?9FQE>&EB;&5?<W1R:6YG+T=R;W5N9#$     "
+  }
+}

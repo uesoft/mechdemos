@@ -1,0 +1,61 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+      <title>Sticky Sliding Boxes</title>
+      <meta name="generator" content="MATLAB 7.6">
+      <meta name="date" content="2008-01-19">
+      <meta name="m-file" content="mech_sticky_box">
+      <link rel="stylesheet" type="text/css" href="../../../../matlab/demos/private/style.css">
+   </head>
+   <body>
+      <div class="header">
+         <div class="left">mech_sticky_box.mdl</div>
+         <div class="right"><a href="matlab:mech_sticky_box">Open this model</a></div>
+      </div>
+      <div class="content">
+         <h1>Sticky Sliding Boxes</h1>
+         <p>A box sliding on top of another box with sticky friction.</p>
+         <p>This model demonstrates the use of a stiction actuator. It adds stiction between three boxes on their contacting surfaces.
+            The bottom box is motion-actuated. The velocity plots show periods of zero velocity, indicating locking.
+         </p><img vspace="5" hspace="5" src="mech_sticky_box_01.png"> <img vspace="5" hspace="5" src="mech_sticky_box_02.png"> <p class="footer"><br>
+            Published with MATLAB&reg; 7.6
+         </p>
+         <p class="footer" id="trademarks">MATLAB and Simulink are registered trademarks of The MathWorks, Inc.  Please see <a href="http://www.mathworks.com/trademarks">www.mathworks.com/trademarks</a> for a list of other trademarks owned by The MathWorks, Inc.  Other product or brand names are trademarks or registered trademarks
+            of their respective owners.
+         </p>
+      </div>
+      <!--
+##### SOURCE BEGIN #####
+%% Sticky Sliding Boxes
+% 
+% A box sliding on top of another box with sticky friction.
+% 
+% This model demonstrates the use of a stiction actuator. It adds stiction between three boxes on their contacting surfaces. The bottom box is motion-actuated. The velocity plots show periods of zero velocity, indicating locking.
+
+clear all
+close all
+bdclose all
+
+%%
+
+open_system('mech_sticky_box')
+evalc('sim(''mech_sticky_box'')');
+
+%%
+
+clear all
+close all
+bdclose all
+
+##### SOURCE END #####
+-->
+   </body>
+</html>

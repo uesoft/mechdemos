@@ -1,0 +1,1068 @@
+Library {
+  Name			  "mech_friction"
+  Version		  7.1
+  MdlSubVersion		  0
+  Description		  "Static and Kinetic Friction Library\n\nThis demo library contains blocks that allow you to actuate a single joint primitive at a time with these types of friction:\n\n* A mix of static and kinetic contact friction, proportional to static and kinetic friction coefficients and the force normal to the contact surface\n* Kinetic damping friction proportional to joint primitive velocity, either translational or rotational, but with opposite sign\n\nThese demo library blocks are masked subsystems containing SimMechanics and Simulink blocks.\n\nThe mixed static-kinetic friction block makes use of the Joint Stiction Actuator block from the SimMechanics Sensors & Actuators Library.  If the connected joint primitive locks, that degree of freedom (DoF) is removed from the system.  SimMechanics tests for locking and unlocking conditions with algebraic loops (non-time-based simulation steps) that can decrease the accuracy of your simulation, particularly if you use a fixed-step solver.  Use such Joint Stiction Actuator blocks only if you need to lock and unlock jonits.\n\nThe kinetic damping friction block is a force element that applies a continuous friction force or torque via joint actuation using joint motion measured by a joint sensor."
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  PostLoadFcn		  "find_system(gcs,'FollowLinks', 'on', 'LookUnderMasks', 'all');"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Mon Mar 14 17:03:52 2005"
+  Creator		  "arnav"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "batserve"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Feb  8 19:04:53 2008"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement:60>"
+  ConfigurationManager	  "None"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Actuator
+      SubClassName	      "unknown"
+      PortType		      "blob"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Fcn
+      Expr		      "sin(u[1])"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "fixdt(1,16,0)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Ground
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      PMComponent
+      SubClassName	      "unknown"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Selector
+      NumberOfDimensions      "1"
+      IndexMode		      "One-based"
+      InputPortWidth	      "-1"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Sensor
+      SubClassName	      "unknown"
+      PortType		      "blob"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      PMIOPort
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      Signum
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "mech_friction"
+    Location		    [15, 93, 478, 273]
+    Open		    off
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Kinetic Damping Actuator"
+      Ports		      [0, 0, 0, 0, 0, 1]
+      Position		      [285, 31, 405, 89]
+      BackgroundColor	      "[1.000000, 0.701961, 0.701961]"
+      CopyFcn		      "%set_param(gcb,'LinkStatus','none');\n%set_param(gcb,'CopyFcn','');"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "Kinetic Damping Actuator"
+      MaskDescription	      "Applies kinetic damping friction to a joint primitive. The friction force/torque is proportional to the velocity of the joint primitive and opposed to its motion. The damping coefficient mu should be positive. The applied friction force/torque is -mu*(joint primitive velocity).\n\nConnect the round mechanical connection port to an actuator port on the Joint. You can friction actuate a prismatic or revolute primitive, but not a spherical primitive.\n\nThe joint primitive menu lists all possible primitives. You must select the correct primitive after you connect the actuator to the joint."
+      MaskPromptString	      "Kinetic damping coefficient|Show kinetic damping force port|Joint primitive"
+      MaskStyleString	      "edit,checkbox,popup(P1|P2|P3|R1|R2|R3)"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "dampingCoeff=@1;dForce=@2;primitive=@3;"
+      MaskInitialization      "%mech_kineticDampingActuator(gcb,'setPrimitive');\nmech_kineticDampingActuator(gcb,'showHideFrictionForces',dForce);"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0.75|off|P1"
+      MaskRunInitForIconRedraw on
+      MaskTabNameString	      ",,"
+      System {
+	Name			"Kinetic Damping Actuator"
+	Location		[19, 346, 367, 761]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Damping Force"
+	  Position		  [35, 318, 65, 332]
+	  Orientation		  "left"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [80, 200, 110, 230]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  Gain			  "-dampingCoeff"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  ParameterDataType	  "sfix(16)"
+	  ParameterScaling	  "2^0"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "JointActuator"
+	  Ports			  [1, 0, 0, 0, 0, 0, 1]
+	  Position		  [130, 259, 195, 391]
+	  BackgroundColor	  "lightBlue"
+	  DialogController	  "MECH.DynMechDlgSource"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Actuator"
+	  SourceType		  "Joint Actuator"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  ActuationStyle	  "Force"
+	  AngleUnits		  "deg"
+	  ArcVelocityUnits	  "deg/s"
+	  ArcAccelerationUnits	  "deg/s^2"
+	  CoordPositionUnits	  "m"
+	  VelocityUnits		  "m/s"
+	  AccelerationUnits	  "m/s^2"
+	  ForceUnits		  "N"
+	  TorqueUnits		  "N-m"
+	  ActiveIO		  "off"
+	  Width			  "1"
+	  ClassName		  "JointActuator"
+	  DialogClass		  "MechanicalActuatorBlock"
+	  Primitive		  "P1"
+	  ReferenceFrame	  "Absolute (INERTIAL)"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "JointSensor"
+	  Ports			  [0, 1, 0, 0, 0, 1]
+	  Position		  [135, 22, 195, 158]
+	  Orientation		  "left"
+	  BackgroundColor	  "green"
+	  NamePlacement		  "alternate"
+	  DialogController	  "MECH.DynMechDlgSource"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
+	  SourceType		  "Joint Sensor"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  Muxed			  "off"
+	  Pose			  "off"
+	  Angle			  "off"
+	  AngleUnits		  "deg"
+	  ArcVelocity		  "on"
+	  ArcVelocityUnits	  "rad/s"
+	  ArcAcceleration	  "off"
+	  ArcAccelerationUnits	  "deg/s^2"
+	  CoordPosition		  "off"
+	  CoordPositionUnits	  "m"
+	  Velocity		  "on"
+	  VelocityUnits		  "m/s"
+	  Acceleration		  "off"
+	  AccelerationUnits	  "m/s^2"
+	  Quaternion		  "on"
+	  QuaternionDT		  "off"
+	  QuaternionDDT		  "off"
+	  QuaternionUnits	  "deg"
+	  OutputVector		  "[ 1 ]"
+	  ActiveIO		  "off"
+	  Width			  "5"
+	  ClassName		  "JointSensor"
+	  DialogClass		  "MechanicalSensorBlock"
+	  Primitive		  "P1"
+	  Force			  "off"
+	  ForceUnits		  "N"
+	  Torque		  "off"
+	  TorqueUnits		  "N-m"
+	  ReferenceFrame	  "Absolute (INERTIAL)"
+	  ReactionSensedSide	  "Base"
+	  ReactionReferenceFrame  "Absolute (World)"
+	  ReactionForce		  "off"
+	  ReactionForceUnits	  "N"
+	  ReactionMoment	  "off"
+	  ReactionMomentUnits	  "N-m"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mechanical\nBranching\nBar"
+	  Ports			  [0, 0, 0, 0, 0, 1, 2]
+	  Position		  [255, 182, 265, 233]
+	  Orientation		  "left"
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  DialogController	  "MECH.DynMechDlgSource"
+	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
+	  SourceType		  "Mechanical Branching Bar"
+	  PhysicalDomain	  "mechanical"
+	  SubClassName		  "Unknown"
+	  LeftPortType		  "blob"
+	  RightPortType		  "blob"
+	  LConnTagsString	  "_newl0"
+	  RConnTagsString	  "SA0|SA1"
+	  ClassName		  "BranchingBar"
+	  DialogClass		  "MechanicalBranchingBarBlock"
+	  NumSAPorts		  "2"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "To Joint"
+	  Position		  [290, 203, 320, 217]
+	  Orientation		  "left"
+	  Port			  "1"
+	  Side			  "Left"
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "To Joint"
+	  SrcPort		  RConn1
+	  DstBlock		  "Mechanical\nBranching\nBar"
+	  DstPort		  LConn1
+	}
+	Line {
+	  SrcBlock		  "JointSensor"
+	  SrcPort		  1
+	  Points		  [-35, 0]
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  Points		  [0, 90]
+	  Branch {
+	    DstBlock		    "Damping Force"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "JointActuator"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "JointSensor"
+	  SrcPort		  LConn1
+	  Points		  [15, 0; 0, 105]
+	  DstBlock		  "Mechanical\nBranching\nBar"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Mechanical\nBranching\nBar"
+	  SrcPort		  RConn2
+	  Points		  [-15, 0; 0, 105]
+	  DstBlock		  "JointActuator"
+	  DstPort		  RConn1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Normal Friction Actuator"
+      Ports		      [0, 0, 0, 0, 0, 1]
+      Position		      [35, 30, 200, 90]
+      BackgroundColor	      "[0.996078, 0.905882, 0.627451]"
+      AncestorBlock	      "mech_friction/Normal Friction Actuator"
+      CopyFcn		      "%set_param(gcb,'LinkStatus','none');\n%set_param(gcb,'CopyFcn','');       "
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "Normal Friction Actuator"
+      MaskDescription	      "Applies kinetic and static contact friction to a joint primitive. The friction force/torque is proportional to the force normal to the frictional surfaces in contact. In order for the actuated joint to be able to lock, the static friction coefficient muS must be larger than the kinetic friction coefficient muK. The friction force is mu*(normal force). The coefficient mu should be positive.\n\nConnect the round mechanical connection port to an actuator port on the Joint. You can friction actuate a prismatic or revolute primitive, but not a spherical primitive.\n\nThe joint primitive menu lists all possible primitives. You must select the correct primitive after you connect the actuator to the joint."
+      MaskPromptString	      "Kinetic friction coefficient|Static friction coefficient|Forward stiction coefficient|Reverse stiction coefficient|Show external actuation port|Show kinetic and static friction ports|Joint primitive"
+      MaskStyleString	      "edit,edit,edit,edit,checkbox,checkbox,popup(P1|P2|P3|R1|R2|R3)"
+      MaskTunableValueString  "on,on,on,on,on,on,on"
+      MaskCallbackString      "||||||%populateStictionPrimitiveList(gcb);\n"
+      MaskEnableString	      "on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,off,off,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on"
+      MaskVarAliasString      ",,,,,,"
+      MaskVariables	      "Ckinetic=@1;staticFF=@2;Csforward=@3;Csreverse=@4;sExtActuation=@5;sForces=@6;primitive=@7;"
+      MaskInitialization      "Csforward = staticFF*Ckinetic;\nCsreverse = staticFF*Ckinetic;\nmech_normalFrictionActuator(gcb,'setPrimitive');\nmech_normalFrictionActuator(gcb,'showHideActuatorSignal',sExtActuation);\nmech_normalFrictionActuator(gcb,'showHideFrictionForces',sForces);"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0.05|1.55|0.055|0.055|off|off|P1"
+      MaskRunInitForIconRedraw on
+      MaskTabNameString	      ",,,,,,"
+      System {
+	Name			"Normal Friction Actuator"
+	Location		[34, 95, 920, 559]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Ground
+	  Name			  "External Actuation"
+	  Position		  [795, 13, 825, 27]
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  Position		  [475, 120, 505, 150]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Gain			  "-1"
+	  ParameterDataType	  "sfix(16)"
+	  ParameterScaling	  "2^0"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "JointSensor"
+	  Ports			  [0, 3, 0, 0, 0, 1]
+	  Position		  [695, 113, 755, 247]
+	  Orientation		  "left"
+	  BackgroundColor	  "green"
+	  DialogController	  "MECH.DynMechDlgSource"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
+	  SourceType		  "Joint Sensor"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  Muxed			  "off"
+	  Pose			  "off"
+	  Angle			  "off"
+	  AngleUnits		  "deg"
+	  ArcVelocity		  "on"
+	  ArcVelocityUnits	  "rad/s"
+	  ArcAcceleration	  "off"
+	  ArcAccelerationUnits	  "deg/s^2"
+	  CoordPosition		  "off"
+	  CoordPositionUnits	  "m"
+	  Velocity		  "on"
+	  VelocityUnits		  "m/s"
+	  Acceleration		  "off"
+	  AccelerationUnits	  "m/s^2"
+	  Quaternion		  "on"
+	  QuaternionDT		  "off"
+	  QuaternionDDT		  "off"
+	  QuaternionUnits	  "deg"
+	  OutputVector		  "[ 1 1 3 ]"
+	  ActiveIO		  "off"
+	  Width			  "5"
+	  ClassName		  "JointSensor"
+	  DialogClass		  "MechanicalSensorBlock"
+	  Primitive		  "P1"
+	  Force			  "on"
+	  ForceUnits		  "N"
+	  Torque		  "on"
+	  TorqueUnits		  "N-m"
+	  ReferenceFrame	  "Absolute (INERTIAL)"
+	  ReactionSensedSide	  "Base"
+	  ReactionReferenceFrame  "Absolute (World)"
+	  ReactionForce		  "on"
+	  ReactionForceUnits	  "N"
+	  ReactionMoment	  "off"
+	  ReactionMomentUnits	  "N-m"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Velocity"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "Computed torque"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "Reaction force (N)"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "JointStictionActuator"
+	  Ports			  [5, 0, 0, 0, 0, 0, 1]
+	  Position		  [125, 39, 230, 431]
+	  Orientation		  "left"
+	  BackgroundColor	  "orange"
+	  DialogController	  "MECH.DynMechDlgSource"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Stiction Actuator"
+	  SourceType		  "Joint Stiction Actuator"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  ActuationStyle	  "Force"
+	  AngleUnits		  "deg"
+	  ArcVelocityUnits	  "deg/s"
+	  ArcAccelerationUnits	  "deg/s^2"
+	  CoordPositionUnits	  "m"
+	  VelocityUnits		  "m/s"
+	  AccelerationUnits	  "m/s^2"
+	  ForceUnits		  "N"
+	  TorqueUnits		  "N-m"
+	  ActiveIO		  "off"
+	  Width			  "5"
+	  ClassName		  "JointStictionActuator"
+	  DialogClass		  "EventActuatorBlock"
+	  Primitive		  "P1"
+	  FrictionalForceUnits	  "N"
+	  ExternalForceUnits	  "N"
+	  FrictionalTorqueUnits	  "N-m"
+	  ExternalTorqueUnits	  "N-m"
+	  LockingTolerance	  "1e-2"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Kinetic Friction"
+	  Position		  [320, 90, 350, 100]
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Kinetic friction \ncoefficient"
+	  Position		  [415, 160, 445, 190]
+	  Orientation		  "left"
+	  Value			  "Ckinetic"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mechanical\nBranching\nBar"
+	  Ports			  [0, 0, 0, 0, 0, 1, 2]
+	  Position		  [70, 17, 80, 68]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  DialogController	  "MECH.DynMechDlgSource"
+	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
+	  SourceType		  "Mechanical Branching Bar"
+	  PhysicalDomain	  "mechanical"
+	  SubClassName		  "Unknown"
+	  LeftPortType		  "blob"
+	  RightPortType		  "blob"
+	  LConnTagsString	  "_newl0"
+	  RConnTagsString	  "SA0|SA1"
+	  ClassName		  "BranchingBar"
+	  DialogClass		  "MechanicalBranchingBarBlock"
+	  NumSAPorts		  "2"
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "Norm"
+	  Position		  [495, 210, 555, 240]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  Expr			  "sqrt(u(1)*u(1) + u(2)*u(2) + u(3)*u(3))"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [365, 375, 415, 410]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  RndMeth		  "Floor"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Reverse sliding stiction limit"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product2"
+	  Ports			  [2, 1]
+	  Position		  [335, 215, 385, 250]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  RndMeth		  "Floor"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Forward sliding stiction limit"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product3"
+	  Ports			  [3, 1]
+	  Position		  [325, 125, 370, 185]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Inputs		  "3"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  RndMeth		  "Floor"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Kinetic friction"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Signum
+	  Name			  "Sign"
+	  Position		  [550, 120, 580, 150]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  ZeroCross		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Static Friction"
+	  Position		  [350, 340, 380, 350]
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Static friction\n coefficient"
+	  Position		  [510, 385, 540, 415]
+	  Orientation		  "left"
+	  Value			  "Csreverse"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Static friction\n coefficient "
+	  Position		  [425, 225, 455, 255]
+	  Orientation		  "left"
+	  Value			  "-Csforward"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  Ports			  [2, 1]
+	  Position		  [420, 305, 440, 325]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Friction force"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "To Joint"
+	  Position		  [15, 38, 45, 52]
+	  Port			  "1"
+	  Side			  "Left"
+	}
+	Line {
+	  SrcBlock		  "Static friction\n coefficient "
+	  SrcPort		  1
+	  DstBlock		  "Product2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "External Actuation"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, 55]
+	  Branch {
+	    Points		    [0, 265]
+	    DstBlock		    "Sum2"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Labels		    [1, 1]
+	    DstBlock		    "JointStictionActuator"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Name			  "Friction force"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  Points		  [0, 0; -80, 0]
+	  Branch {
+	    DstBlock		    "Static Friction"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "JointStictionActuator"
+	    DstPort		    4
+	  }
+	}
+	Line {
+	  Name			  "Computed torque"
+	  Labels		  [3, 1]
+	  SrcBlock		  "JointSensor"
+	  SrcPort		  2
+	  Points		  [-20, 0; 0, 135]
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Static friction\n coefficient"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Kinetic friction"
+	  SrcBlock		  "Product3"
+	  SrcPort		  1
+	  Points		  [0, 0; -15, 0]
+	  Branch {
+	    DstBlock		    "Kinetic Friction"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Labels		    [-1, 0]
+	    DstBlock		    "JointStictionActuator"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Kinetic friction \ncoefficient"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Product3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Product3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Norm"
+	  SrcPort		  1
+	  Points		  [0, 0; -15, 0]
+	  Branch {
+	    Points		    [0, 160]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Product2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -70]
+	    DstBlock		    "Product3"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  Name			  "Forward sliding stiction limit"
+	  SrcBlock		  "Product2"
+	  SrcPort		  1
+	  DstBlock		  "JointStictionActuator"
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "Reverse sliding stiction limit"
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "JointStictionActuator"
+	  DstPort		  5
+	}
+	Line {
+	  Name			  "Reaction force (N)"
+	  Labels		  [-1, 0]
+	  SrcBlock		  "JointSensor"
+	  SrcPort		  3
+	  Points		  [0, 0]
+	  DstBlock		  "Norm"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sign"
+	  SrcPort		  1
+	  DstBlock		  "Gain1"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Velocity"
+	  Labels		  [2, 0]
+	  SrcBlock		  "JointSensor"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Sign"
+	  DstPort		  1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Mechanical\nBranching\nBar"
+	  SrcPort		  RConn1
+	  Points		  [686, 0; 0, 150]
+	  DstBlock		  "JointSensor"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Mechanical\nBranching\nBar"
+	  SrcPort		  LConn1
+	  Points		  [0, 0]
+	  DstBlock		  "To Joint"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Mechanical\nBranching\nBar"
+	  SrcPort		  RConn2
+	  Points		  [10, 0; 0, 180]
+	  DstBlock		  "JointStictionActuator"
+	  DstPort		  RConn1
+	}
+      }
+    }
+    Annotation {
+      Name		      "Static and Kinetic Friction Library"
+      Position		      [219, 129]
+      FontName		      "Arial"
+      FontSize		      14
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "Use these simplified actuator blocks on single joint primitives ONLY"
+      Position		      [221, 148]
+      DropShadow	      on
+      FontName		      "Arial"
+      FontWeight	      "bold"
+    }
+  }
+}

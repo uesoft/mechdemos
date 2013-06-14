@@ -1,0 +1,2838 @@
+Model {
+  Name			  "mech_planetary"
+  Version		  7.1
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.293"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Fri Oct 19 20:58:03 2001"
+  Creator		  "barnard"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "batserve"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Feb  7 20:35:05 2008"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement:293>"
+  ConfigurationManager	  "None"
+  UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts;"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.4.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.4.0"
+	  StartTime		  "0.0"
+	  StopTime		  "inf"
+	  AbsTol		  "1e-6"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Non-adaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.4.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsOut"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.4.0"
+	  BlockReduction	  on
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  off
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.4.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "none"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg on
+	  CheckExecutionContextRuntimeOutputMsg	on
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  StrictBusMsg		  "None"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.4.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  64
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "LittleEndian"
+	  TargetWordSize	  64
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "MATLAB Host"
+	  TargetUnknown		  off
+	  ProdEqTarget		  off
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.4.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferenceSigSizeVariationType "Always allowed"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.4.0"
+	  SystemTargetFile	  "rsim.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "rsim_default_tmf"
+	  Description		  "Rapid Simulation Target"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ProcessScript		  "rsim_make_rtw_hook"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  RTWCompilerOptimization "Off"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.4.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    RTW.RSimTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		13
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.4.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      AutosarCompliant	      off
+	      RSIM_SOLVER_SELECTION   "Auto"
+	      ExtMode		      off
+	      ExtModeTransport	      0
+	      ExtModeStaticAlloc      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTesting	      off
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RSIM_PARAMETER_LOADING  on
+	      RSIM_STORAGE_CLASS_AUTO on
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	SSC.SimscapeCC {
+	  $ObjectID		  11
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "Name"
+	    PropName		    "DisabledProps"
+	  }
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    1
+	    MECH.SimMechanicsCC {
+	      $ObjectID		      12
+	      Version		      "1.4.0"
+	      Name		      "SimMechanics"
+	      WarnOnRedundantConstraints off
+	      WarnOnSingularInitialAssembly off
+	      ShowCutJoints	      off
+	      VisOnUpdateDiagram      on
+	      VisDuringSimulation     on
+	      VisConfigFile	      "mech_planetary_viz.mat"
+	    }
+	    PropName		    "Components"
+	  }
+	  Name			  "Simscape"
+	  EditingMode		  "Full"
+	  Version		  "1.0"
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  PhysicalModelingChecksum "2451628959"
+  PhysicalModelingParameterChecksum "3150766977"
+  PhysicalModelingProducts "SimMechanics"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Actuator
+      SubClassName	      "unknown"
+      PortType		      "blob"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "fixdt(1,16,0)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Goto
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Ground
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      PMComponent
+      SubClassName	      "unknown"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Selector
+      NumberOfDimensions      "1"
+      IndexMode		      "One-based"
+      InputPortWidth	      "-1"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Sensor
+      SubClassName	      "unknown"
+      PortType		      "blob"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      PMIOPort
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      Signum
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "mech_planetary"
+    Location		    [13, 78, 954, 653]
+    Open		    off
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    BlocksetDataString	    "[0 0 0]|1|0|1e-3|1|1e-3|1|2|1e-4|1e-4|0|0|0|1e-3|Deprecated|0|0|0||1|0"
+    Block {
+      BlockType		      Reference
+      Name		      "Body Actuator"
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [785, 85, 815, 115]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Body Actuator"
+      SourceType	      "Body Actuator"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PhysicalDomain	      "Mechanical"
+      PortType		      "blob"
+      ActuationStyle	      "Force"
+      AngleUnits	      "deg"
+      ArcVelocityUnits	      "deg/s"
+      ArcAccelerationUnits    "deg/s^2"
+      CoordPositionUnits      "m"
+      VelocityUnits	      "m/s"
+      AccelerationUnits	      "m/s^2"
+      ForceUnits	      "N"
+      TorqueUnits	      "N-m"
+      ActiveIO		      "on"
+      Width		      "3"
+      ClassName		      "BodyActuatorForceTorque"
+      DialogClass	      "MechanicalActuatorBlock"
+      ReferenceFrame	      "Absolute (World)"
+      Angle		      "off"
+      CoordPosition	      "on"
+      Force		      "off"
+      Torque		      "on"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Body Actuator1"
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [175, 56, 200, 84]
+      ShowName		      off
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Body Actuator"
+      SourceType	      "Body Actuator"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PhysicalDomain	      "Mechanical"
+      PortType		      "blob"
+      ActuationStyle	      "Force"
+      AngleUnits	      "deg"
+      ArcVelocityUnits	      "deg/s"
+      ArcAccelerationUnits    "deg/s^2"
+      CoordPositionUnits      "m"
+      VelocityUnits	      "m/s"
+      AccelerationUnits	      "m/s^2"
+      ForceUnits	      "N"
+      TorqueUnits	      "N-m"
+      ActiveIO		      "on"
+      Width		      "3"
+      ClassName		      "BodyActuatorForceTorque"
+      DialogClass	      "MechanicalActuatorBlock"
+      ReferenceFrame	      "Absolute (World)"
+      Angle		      "off"
+      CoordPosition	      "on"
+      Force		      "off"
+      Torque		      "on"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Body Sensor"
+      Ports		      [0, 1, 0, 0, 0, 1]
+      Position		      [170, 232, 195, 258]
+      Orientation	      "left"
+      ForegroundColor	      "blue"
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Body Sensor"
+      SourceType	      "Body Sensor"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PhysicalDomain	      "Mechanical"
+      PortType		      "blob"
+      Muxed		      "on"
+      Pose		      "off"
+      Angle		      "on"
+      AngleUnits	      "deg"
+      ArcVelocity	      "off"
+      ArcVelocityUnits	      "deg/s"
+      ArcAcceleration	      "off"
+      ArcAccelerationUnits    "deg/s^2"
+      CoordPosition	      "on"
+      CoordPositionUnits      "m"
+      Velocity		      "off"
+      VelocityUnits	      "m/s"
+      Acceleration	      "off"
+      AccelerationUnits	      "m/s^2"
+      Quaternion	      "on"
+      QuaternionDT	      "off"
+      QuaternionDDT	      "off"
+      QuaternionUnits	      "off"
+      OutputVector	      "[ 3 ]"
+      ActiveIO		      "on"
+      Width		      "3"
+      ClassName		      "BodySensor"
+      DialogClass	      "MechanicalSensorBlock"
+      ReferenceFrame	      "Absolute (World)"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Body Sensor1"
+      Ports		      [0, 1, 0, 0, 0, 1]
+      Position		      [785, 55, 815, 85]
+      ShowName		      off
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Body Sensor"
+      SourceType	      "Body Sensor"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PhysicalDomain	      "Mechanical"
+      PortType		      "blob"
+      Muxed		      "on"
+      Pose		      "off"
+      Angle		      "on"
+      AngleUnits	      "deg"
+      ArcVelocity	      "on"
+      ArcVelocityUnits	      "rad/s"
+      ArcAcceleration	      "off"
+      ArcAccelerationUnits    "deg/s^2"
+      CoordPosition	      "off"
+      CoordPositionUnits      "m"
+      Velocity		      "off"
+      VelocityUnits	      "m/s"
+      Acceleration	      "off"
+      AccelerationUnits	      "m/s^2"
+      Quaternion	      "on"
+      QuaternionDT	      "off"
+      QuaternionDDT	      "off"
+      QuaternionUnits	      "off"
+      OutputVector	      "[ 3 ]"
+      ActiveIO		      "on"
+      Width		      "3"
+      ClassName		      "BodySensor"
+      DialogClass	      "MechanicalSensorBlock"
+      ReferenceFrame	      "Absolute (World)"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Carrier"
+      Ports		      [0, 0, 0, 0, 0, 2, 3]
+      Position		      [490, 192, 560, 268]
+      Orientation	      "left"
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Bodies/Body"
+      SourceType	      "Body"
+      PhysicalDomain	      "mechanical"
+      SubClassName	      "Unknown"
+      LeftPortType	      "workingframe"
+      RightPortType	      "workingframe"
+      LConnTagsString	      "CS3|CS5"
+      RConnTagsString	      "CS4|CS2|CS1"
+      ClassName		      "Body"
+      DialogClass	      "MechanicalBodyBlock"
+      Mass		      "1.5"
+      MassUnits		      "kg"
+      InertiaUnits	      "kg*m^2"
+      Inertia		      "[0.65 0 0;0 0.032 0;0 0 0.65]"
+      Shape		      "Cylinder"
+      ShapeDims		      "[1 1]"
+      ShapeUnits	      "m"
+      ShapeUse		      "false"
+      Density		      "1"
+      DensityUnits	      "kg/m^3"
+      DensityUse	      "false"
+      GraphicsMode	      "1"
+      BodyColor		      "[0.5 0.5 0.5]"
+      GraphicsObj	      "[]"
+      AttachedToCS	      "1"
+      CG		      "Left$CG$[0 0 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$false"
+      WorkingFrames	      "Left$CS3$[0 0 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true#Left$CS5$[0 0 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true#Right$CS4$[0 0 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true#Right$CS2$[0 0.28+0.78 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true#Right$CS1$[0 0 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true"
+      CGPos		      "[0 0 0]"
+      CGRot		      "[0 0 0]"
+      CS0Pos		      "[]"
+      CS0Rot		      "[]"
+      CS1Pos		      "[0 0 0]"
+      CS1Rot		      "[0 0 0]"
+      CS2Pos		      "[0 0.28+0.78 0]"
+      CS2Rot		      "[0 0 0]"
+      CS3Pos		      "[0 0 0]"
+      CS3Rot		      "[0 0 0]"
+      CS4Pos		      "[0 0 0]"
+      CS4Rot		      "[0 0 0]"
+      CS5Pos		      "[0 0 0]"
+      CS5Rot		      "[0 0 0]"
+      CS6Pos		      "[]"
+      CS6Rot		      "[]"
+      CS7Pos		      "[]"
+      CS7Rot		      "[]"
+      CS8Pos		      "[]"
+      CS8Rot		      "[]"
+      CS9Pos		      "[]"
+      CS9Rot		      "[]"
+      CS10Pos		      "[]"
+      CS10Rot		      "[]"
+      CS11Pos		      "[]"
+      CS11Rot		      "[]"
+      CS12Pos		      "[]"
+      CS12Rot		      "[]"
+      CS13Pos		      "[]"
+      CS13Rot		      "[]"
+      CS14Pos		      "[]"
+      CS14Rot		      "[]"
+      CS15Pos		      "[]"
+      CS15Rot		      "[]"
+      CS16Pos		      "[]"
+      CS16Rot		      "[]"
+      CS17Pos		      "[]"
+      CS17Rot		      "[]"
+      CS18Pos		      "[]"
+      CS18Rot		      "[]"
+      CS19Pos		      "[]"
+      CS19Rot		      "[]"
+      CS20Pos		      "[]"
+      CS20Rot		      "[]"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Clutch Engage"
+      Ports		      [1, 1]
+      Position		      [240, 485, 270, 515]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      SourceBlock	      "simulink/Math\nOperations/Slider\nGain"
+      SourceType	      "Slider Gain"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      low		      "0"
+      gain		      "0"
+      high		      "1"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      Position		      [290, 485, 320, 515]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Friction clutch"
+      Ports		      [1, 1, 0, 0, 0, 1, 1]
+      Position		      [130, 485, 220, 540]
+      Orientation	      "left"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Friction clutch"
+	Location		[255, 258, 987, 598]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	212
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Pressure"
+	  Position		  [500, 175, 530, 185]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  Position		  [265, 125, 295, 155]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Value			  "0"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  Position		  [350, 165, 380, 195]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Gain			  "-120"
+	  ParameterDataType	  "sfix(16)"
+	  ParameterScaling	  "2^0"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain2"
+	  Position		  [220, 205, 250, 235]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Gain			  "-1"
+	  ParameterDataType	  "sfix(16)"
+	  ParameterScaling	  "2^0"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain3"
+	  Position		  [480, 100, 510, 130]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Gain			  "-100"
+	  ParameterDataType	  "sfix(16)"
+	  ParameterScaling	  "2^0"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain4"
+	  Position		  [515, 55, 545, 85]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Gain			  "-10"
+	  ParameterDataType	  "sfix(16)"
+	  ParameterScaling	  "2^0"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain5"
+	  Position		  [445, 165, 475, 195]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Gain			  "1/30"
+	  ParameterDataType	  "sfix(16)"
+	  ParameterScaling	  "2^0"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Joint Sensor3"
+	  Ports			  [0, 2, 0, 0, 0, 1]
+	  Position		  [620, 60, 660, 100]
+	  Orientation		  "left"
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  DialogController	  "MECH.DynMechDlgSource"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
+	  SourceType		  "Joint Sensor"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  Muxed			  "off"
+	  Pose			  "off"
+	  Angle			  "off"
+	  AngleUnits		  "rad"
+	  ArcVelocity		  "on"
+	  ArcVelocityUnits	  "rad/s"
+	  ArcAcceleration	  "off"
+	  ArcAccelerationUnits	  "deg/s^2"
+	  CoordPosition		  "on"
+	  CoordPositionUnits	  "m"
+	  Velocity		  "off"
+	  VelocityUnits		  "m/s"
+	  Acceleration		  "off"
+	  AccelerationUnits	  "m/s^2"
+	  Quaternion		  "on"
+	  QuaternionDT		  "off"
+	  QuaternionDDT		  "off"
+	  QuaternionUnits	  "off"
+	  OutputVector		  "[ 1 1 ]"
+	  ActiveIO		  "on"
+	  Width			  "2"
+	  ClassName		  "JointSensor"
+	  DialogClass		  "MechanicalSensorBlock"
+	  Primitive		  "R1"
+	  Force			  "off"
+	  ForceUnits		  "N"
+	  Torque		  "on"
+	  TorqueUnits		  "N-m"
+	  ReferenceFrame	  "Absolute (INERTIAL)"
+	  ReactionSensedSide	  "Base"
+	  ReactionReferenceFrame  "Absolute (World)"
+	  ReactionForce		  "off"
+	  ReactionForceUnits	  "N"
+	  ReactionMoment	  "off"
+	  ReactionMomentUnits	  "N-m"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Joint Stiction Actuator"
+	  Ports			  [5, 0, 0, 0, 0, 0, 1]
+	  Position		  [80, 129, 190, 231]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  DialogController	  "MECH.DynMechDlgSource"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Stiction Actuator"
+	  SourceType		  "Joint Stiction Actuator"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  ActuationStyle	  "Force"
+	  AngleUnits		  "deg"
+	  ArcVelocityUnits	  "deg/s"
+	  ArcAccelerationUnits	  "deg/s^2"
+	  CoordPositionUnits	  "m"
+	  VelocityUnits		  "m/s"
+	  AccelerationUnits	  "m/s^2"
+	  ForceUnits		  "N"
+	  TorqueUnits		  "N-m"
+	  ActiveIO		  "on"
+	  Width			  "5"
+	  ClassName		  "JointStictionActuator"
+	  DialogClass		  "EventActuatorBlock"
+	  Primitive		  "R1"
+	  FrictionalForceUnits	  "N"
+	  ExternalForceUnits	  "N"
+	  FrictionalTorqueUnits	  "N-m"
+	  ExternalTorqueUnits	  "N-m"
+	  LockingTolerance	  "1e-2"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [315, 140, 345, 175]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Signum
+	  Name			  "Sign"
+	  Position		  [535, 100, 565, 130]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1]
+	  Position		  [430, 60, 450, 80]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "Sensor"
+	  Position		  [695, 75, 725, 85]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  Port			  "1"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "Actuator"
+	  Position		  [25, 173, 55, 187]
+	  Port			  "2"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Velocity"
+	  Position		  [510, 25, 540, 35]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Joint Stiction Actuator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  Points		  [-70, 0]
+	  Branch {
+	    DstBlock		    "Joint Stiction Actuator"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 40]
+	    DstBlock		    "Gain2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  DstBlock		  "Joint Stiction Actuator"
+	  DstPort		  1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Actuator"
+	  SrcPort		  RConn1
+	  DstBlock		  "Joint Stiction Actuator"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Sensor"
+	  SrcPort		  RConn1
+	  DstBlock		  "Joint Sensor3"
+	  DstPort		  LConn1
+	}
+	Line {
+	  SrcBlock		  "Sign"
+	  SrcPort		  1
+	  DstBlock		  "Gain3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain4"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain3"
+	  SrcPort		  1
+	  Points		  [-35, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Joint Sensor3"
+	  SrcPort		  1
+	  Points		  [0, 0; -35, 0]
+	  Branch {
+	    DstBlock		    "Gain4"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Sign"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -40]
+	    DstBlock		    "Velocity"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  Points		  [-30, 0; 0, 80]
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Joint Sensor3"
+	  SrcPort		  2
+	  Points		  [-20, 0; 0, 110]
+	  DstBlock		  "Joint Stiction Actuator"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Gain2"
+	  SrcPort		  1
+	  DstBlock		  "Joint Stiction Actuator"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Pressure"
+	  SrcPort		  1
+	  DstBlock		  "Gain5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain5"
+	  SrcPort		  1
+	  Points		  [-10, 0]
+	  Branch {
+	    DstBlock		    "Gain1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -15]
+	    DstBlock		    "Product"
+	    DstPort		    2
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From1"
+      Position		      [820, 401, 880, 419]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "carrier"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From2"
+      Position		      [820, 420, 880, 440]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "sun"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From3"
+      Position		      [820, 442, 880, 458]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "planet"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From4"
+      Position		      [820, 482, 880, 498]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ring"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From5"
+      Position		      [820, 461, 880, 479]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "translation"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "GND1"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [65, 400, 105, 440]
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Bodies/Ground"
+      SourceType	      "Ground"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      LeftPortType	      "env"
+      RightPortType	      "workingframe"
+      PhysicalDomain	      "Mechanical"
+      DialogClass	      "GroundBlock"
+      ClassName		      "Ground"
+      CoordPosition	      "[0 0 0]"
+      CoordPositionUnits      "m"
+      StateVectorMgrId	      "-1"
+      MachineId		      "[0 0]"
+      ShowEnvPort	      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "GND2"
+      Ports		      [0, 0, 0, 0, 0, 0, 1]
+      Position		      [735, 215, 775, 255]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      UserDataPersistent      on
+      UserData		      "DataTag1"
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Bodies/Ground"
+      SourceType	      "Ground"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      LeftPortType	      "env"
+      RightPortType	      "workingframe"
+      PhysicalDomain	      "Mechanical"
+      DialogClass	      "GroundBlock"
+      ClassName		      "Ground"
+      CoordPosition	      "[0 0 0]"
+      CoordPositionUnits      "m"
+      StateVectorMgrId	      "-1"
+      MachineId		      "[0 0]"
+      ShowEnvPort	      off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain"
+      Position		      [845, 54, 895, 86]
+      ShowName		      off
+      Gain		      "[0 0 0;0 0 0;0 0 -20]"
+      Multiplication	      "Matrix(K*u)"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain1"
+      Position		      [340, 185, 380, 205]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      Gain		      "-1"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gear Constraint 1"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [190, 135, 240, 185]
+      Orientation	      "down"
+      NamePlacement	      "alternate"
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Constraints & \nDrivers/Gear Constraint"
+      SourceType	      "Gear Constraint"
+      PhysicalDomain	      "mechanical"
+      SubClassName	      "Unknown"
+      LeftPortType	      "blob"
+      RightPortType	      "blob"
+      LConnTagsString	      "__newl0"
+      RConnTagsString	      "__newr0"
+      ClassName		      "GearConstraint"
+      DialogClass	      "GearConstraint"
+      NumSAPorts	      "0"
+      BaseRadius	      "1.34"
+      BaseRadiusUnits	      "m"
+      FollowerRadius	      "0.28"
+      FollowerRadiusUnits     "m"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gear Constraint 2"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [190, 305, 240, 355]
+      Orientation	      "up"
+      NamePlacement	      "alternate"
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Constraints & \nDrivers/Gear Constraint"
+      SourceType	      "Gear Constraint"
+      PhysicalDomain	      "mechanical"
+      SubClassName	      "Unknown"
+      LeftPortType	      "blob"
+      RightPortType	      "blob"
+      LConnTagsString	      "__newl0"
+      RConnTagsString	      "__newr0"
+      ClassName		      "GearConstraint"
+      DialogClass	      "GearConstraint"
+      NumSAPorts	      "0"
+      BaseRadius	      "0.78"
+      BaseRadiusUnits	      "m"
+      FollowerRadius	      "0.28"
+      FollowerRadiusUnits     "m"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto"
+      Position		      [465, 314, 520, 336]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      GotoTag		      "carrier"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto1"
+      Position		      [260, 330, 305, 350]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      GotoTag		      "planet"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto2"
+      Position		      [475, 405, 525, 425]
+      ShowName		      off
+      GotoTag		      "sun"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto3"
+      Position		      [340, 160, 385, 180]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      GotoTag		      "ring"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto4"
+      Position		      [60, 235, 145, 255]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      GotoTag		      "translation"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Input torque"
+      Position		      [100, 55, 145, 85]
+      Value		      "[0 0 5]"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Joint Actuator"
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [298, 140, 322, 165]
+      Orientation	      "up"
+      ShowName		      off
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Actuator"
+      SourceType	      "Joint Actuator"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PhysicalDomain	      "Mechanical"
+      PortType		      "blob"
+      ActuationStyle	      "Force"
+      AngleUnits	      "deg"
+      ArcVelocityUnits	      "deg/s"
+      ArcAccelerationUnits    "deg/s^2"
+      CoordPositionUnits      "m"
+      VelocityUnits	      "m/s"
+      AccelerationUnits	      "m/s^2"
+      ForceUnits	      "N"
+      TorqueUnits	      "N-m"
+      ActiveIO		      "on"
+      Width		      "1"
+      ClassName		      "JointActuator"
+      DialogClass	      "MechanicalActuatorBlock"
+      Primitive		      "R1"
+      ReferenceFrame	      "Absolute (INERTIAL)"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Joint Sensor"
+      Ports		      [0, 1, 0, 0, 0, 1]
+      Position		      [420, 404, 445, 426]
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
+      SourceType	      "Joint Sensor"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PhysicalDomain	      "Mechanical"
+      PortType		      "blob"
+      Muxed		      "on"
+      Pose		      "off"
+      Angle		      "on"
+      AngleUnits	      "rad"
+      ArcVelocity	      "off"
+      ArcVelocityUnits	      "deg/s"
+      ArcAcceleration	      "off"
+      ArcAccelerationUnits    "deg/s^2"
+      CoordPosition	      "on"
+      CoordPositionUnits      "m"
+      Velocity		      "off"
+      VelocityUnits	      "m/s"
+      Acceleration	      "off"
+      AccelerationUnits	      "m/s^2"
+      Quaternion	      "on"
+      QuaternionDT	      "off"
+      QuaternionDDT	      "off"
+      QuaternionUnits	      "off"
+      OutputVector	      "[ 1 ]"
+      ActiveIO		      "on"
+      Width		      "1"
+      ClassName		      "JointSensor"
+      DialogClass	      "MechanicalSensorBlock"
+      Primitive		      "R1"
+      Force		      "off"
+      ForceUnits	      "N"
+      Torque		      "off"
+      TorqueUnits	      "N-m"
+      ReferenceFrame	      "Absolute (INERTIAL)"
+      ReactionSensedSide      "Base"
+      ReactionReferenceFrame  "Absolute (World)"
+      ReactionForce	      "off"
+      ReactionForceUnits      "N"
+      ReactionMoment	      "off"
+      ReactionMomentUnits     "N-m"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Joint Sensor1"
+      Ports		      [0, 1, 0, 0, 0, 1]
+      Position		      [325, 326, 350, 354]
+      Orientation	      "left"
+      ForegroundColor	      "blue"
+      ShowName		      off
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
+      SourceType	      "Joint Sensor"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PhysicalDomain	      "Mechanical"
+      PortType		      "blob"
+      Muxed		      "on"
+      Pose		      "off"
+      Angle		      "on"
+      AngleUnits	      "rad"
+      ArcVelocity	      "off"
+      ArcVelocityUnits	      "deg/s"
+      ArcAcceleration	      "off"
+      ArcAccelerationUnits    "deg/s^2"
+      CoordPosition	      "on"
+      CoordPositionUnits      "m"
+      Velocity		      "off"
+      VelocityUnits	      "m/s"
+      Acceleration	      "off"
+      AccelerationUnits	      "m/s^2"
+      Quaternion	      "on"
+      QuaternionDT	      "off"
+      QuaternionDDT	      "off"
+      QuaternionUnits	      "off"
+      OutputVector	      "[ 1 ]"
+      ActiveIO		      "on"
+      Width		      "1"
+      ClassName		      "JointSensor"
+      DialogClass	      "MechanicalSensorBlock"
+      Primitive		      "R1"
+      Force		      "off"
+      ForceUnits	      "N"
+      Torque		      "off"
+      TorqueUnits	      "N-m"
+      ReferenceFrame	      "Absolute (INERTIAL)"
+      ReactionSensedSide      "Base"
+      ReactionReferenceFrame  "Absolute (World)"
+      ReactionForce	      "off"
+      ReactionForceUnits      "N"
+      ReactionMoment	      "off"
+      ReactionMomentUnits     "N-m"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Joint Sensor2"
+      Ports		      [0, 2, 0, 0, 0, 1]
+      Position		      [403, 135, 427, 155]
+      Orientation	      "down"
+      ForegroundColor	      "blue"
+      ShowName		      off
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
+      SourceType	      "Joint Sensor"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PhysicalDomain	      "Mechanical"
+      PortType		      "blob"
+      Muxed		      "off"
+      Pose		      "off"
+      Angle		      "on"
+      AngleUnits	      "rad"
+      ArcVelocity	      "on"
+      ArcVelocityUnits	      "rad/s"
+      ArcAcceleration	      "off"
+      ArcAccelerationUnits    "deg/s^2"
+      CoordPosition	      "on"
+      CoordPositionUnits      "m"
+      Velocity		      "off"
+      VelocityUnits	      "m/s"
+      Acceleration	      "off"
+      AccelerationUnits	      "m/s^2"
+      Quaternion	      "on"
+      QuaternionDT	      "off"
+      QuaternionDDT	      "off"
+      QuaternionUnits	      "off"
+      OutputVector	      "[ 1 1 ]"
+      ActiveIO		      "on"
+      Width		      "2"
+      ClassName		      "JointSensor"
+      DialogClass	      "MechanicalSensorBlock"
+      Primitive		      "R1"
+      Force		      "off"
+      ForceUnits	      "N"
+      Torque		      "off"
+      TorqueUnits	      "N-m"
+      ReferenceFrame	      "Absolute (INERTIAL)"
+      ReactionSensedSide      "Base"
+      ReactionReferenceFrame  "Absolute (World)"
+      ReactionForce	      "off"
+      ReactionForceUnits      "N"
+      ReactionMoment	      "off"
+      ReactionMomentUnits     "N-m"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Joint Sensor4"
+      Ports		      [0, 1, 0, 0, 0, 1]
+      Position		      [545, 311, 570, 339]
+      Orientation	      "left"
+      ForegroundColor	      "blue"
+      ShowName		      off
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
+      SourceType	      "Joint Sensor"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PhysicalDomain	      "Mechanical"
+      PortType		      "blob"
+      Muxed		      "on"
+      Pose		      "off"
+      Angle		      "on"
+      AngleUnits	      "rad"
+      ArcVelocity	      "off"
+      ArcVelocityUnits	      "deg/s"
+      ArcAcceleration	      "off"
+      ArcAccelerationUnits    "deg/s^2"
+      CoordPosition	      "on"
+      CoordPositionUnits      "m"
+      Velocity		      "off"
+      VelocityUnits	      "m/s"
+      Acceleration	      "off"
+      AccelerationUnits	      "m/s^2"
+      Quaternion	      "on"
+      QuaternionDT	      "off"
+      QuaternionDDT	      "off"
+      QuaternionUnits	      "off"
+      OutputVector	      "[ 1 ]"
+      ActiveIO		      "on"
+      Width		      "1"
+      ClassName		      "JointSensor"
+      DialogClass	      "MechanicalSensorBlock"
+      Primitive		      "R1"
+      Force		      "off"
+      ForceUnits	      "N"
+      Torque		      "off"
+      TorqueUnits	      "N-m"
+      ReferenceFrame	      "Absolute (INERTIAL)"
+      ReactionSensedSide      "Base"
+      ReactionReferenceFrame  "Absolute (World)"
+      ReactionForce	      "off"
+      ReactionForceUnits      "N"
+      ReactionMoment	      "off"
+      ReactionMomentUnits     "N-m"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Load"
+      Ports		      [0, 0, 0, 0, 0, 2, 1]
+      Position		      [675, 55, 745, 115]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Bodies/Body"
+      SourceType	      "Body"
+      PhysicalDomain	      "mechanical"
+      SubClassName	      "Unknown"
+      LeftPortType	      "workingframe"
+      RightPortType	      "workingframe"
+      LConnTagsString	      "CS3|CS2"
+      RConnTagsString	      "CS1"
+      ClassName		      "Body"
+      DialogClass	      "MechanicalBodyBlock"
+      Mass		      "1.25"
+      MassUnits		      "kg"
+      InertiaUnits	      "kg*m^2"
+      Inertia		      "[0.65 0 0;0 0.65 0;0 0 0.04]"
+      Shape		      "Cylinder"
+      ShapeDims		      "[1 1]"
+      ShapeUnits	      "m"
+      ShapeUse		      "false"
+      Density		      "1"
+      DensityUnits	      "kg/m^3"
+      DensityUse	      "false"
+      GraphicsMode	      "1"
+      BodyColor		      "[0.5 0.5 0.5]"
+      GraphicsObj	      "[]"
+      AttachedToCS	      "1"
+      CG		      "Left$CG$[0 0 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$false"
+      WorkingFrames	      "Left$CS3$[0 0 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true#Left$CS2$[0 0 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true#Right$CS1$[0 0 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true"
+      CGPos		      "[0 0 0]"
+      CGRot		      "[0 0 0]"
+      CS0Pos		      "[]"
+      CS0Rot		      "[]"
+      CS1Pos		      "[0 0 0]"
+      CS1Rot		      "[0 0 0]"
+      CS2Pos		      "[0 0 0]"
+      CS2Rot		      "[0 0 0]"
+      CS3Pos		      "[0 0 0]"
+      CS3Rot		      "[0 0 0]"
+      CS4Pos		      "[]"
+      CS4Rot		      "[]"
+      CS5Pos		      "[]"
+      CS5Rot		      "[]"
+      CS6Pos		      "[]"
+      CS6Rot		      "[]"
+      CS7Pos		      "[]"
+      CS7Rot		      "[]"
+      CS8Pos		      "[]"
+      CS8Rot		      "[]"
+      CS9Pos		      "[]"
+      CS9Rot		      "[]"
+      CS10Pos		      "[]"
+      CS10Rot		      "[]"
+      CS11Pos		      "[]"
+      CS11Rot		      "[]"
+      CS12Pos		      "[]"
+      CS12Rot		      "[]"
+      CS13Pos		      "[]"
+      CS13Rot		      "[]"
+      CS14Pos		      "[]"
+      CS14Rot		      "[]"
+      CS15Pos		      "[]"
+      CS15Rot		      "[]"
+      CS16Pos		      "[]"
+      CS16Rot		      "[]"
+      CS17Pos		      "[]"
+      CS17Rot		      "[]"
+      CS18Pos		      "[]"
+      CS18Rot		      "[]"
+      CS19Pos		      "[]"
+      CS19Rot		      "[]"
+      CS20Pos		      "[]"
+      CS20Rot		      "[]"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Machine\nEnvironment"
+      Tag		      "Factory ground"
+      Ports		      [0, 0, 0, 0, 0, 0, 1]
+      Position		      [65, 370, 105, 390]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      DialogController	      "MECH.DialogSource"
+      SourceBlock	      "mblibv1/Bodies/Machine\nEnvironment"
+      SourceType	      "Machine Environment"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PortType		      "env"
+      PhysicalDomain	      "Mechanical"
+      ClassName		      "Environment"
+      DialogTemplateClass     "MECH.MachineEnvironment"
+      SyncWhenCopied	      "off"
+      Gravity		      "[0 0 0]"
+      GravityUnits	      "m/s^2"
+      GravityAsSignal	      off
+      Dimensionality	      "3D Only"
+      AnalysisType	      "Forward dynamics"
+      LinearAssemblyTolerance "1e-3"
+      LinearAssemblyToleranceUnits "m"
+      AngularAssemblyTolerance "1e-3"
+      AngularAssemblyToleranceUnits "rad"
+      ConstraintSolverType    "Stabilizing"
+      ConstraintRelTolerance  "1e-4"
+      ConstraintAbsTolerance  "1e-4"
+      UseRobustSingularityHandling off
+      RedundancyAnalysisToleranceType "Automatically select tolerance"
+      RedundancyAnalysisTolerance "1e-14"
+      StatePerturbationType   "Adaptive"
+      PerturbationSize	      "1e-3"
+      VisualizeMachine	      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Planet"
+      Ports		      [0, 0, 0, 0, 0, 3, 1]
+      Position		      [255, 212, 325, 278]
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Bodies/Body"
+      SourceType	      "Body"
+      PhysicalDomain	      "mechanical"
+      SubClassName	      "Unknown"
+      LeftPortType	      "workingframe"
+      RightPortType	      "workingframe"
+      LConnTagsString	      "CS5|CS4|CS1"
+      RConnTagsString	      "CG"
+      ClassName		      "Body"
+      DialogClass	      "MechanicalBodyBlock"
+      Mass		      "1.3"
+      MassUnits		      "kg"
+      InertiaUnits	      "kg*m^2"
+      Inertia		      "[0.53 0 0;0 0.53 0;0 0 1]*1.2E-1"
+      Shape		      "Cylinder"
+      ShapeDims		      "[1 1]"
+      ShapeUnits	      "m"
+      ShapeUse		      "false"
+      Density		      "1"
+      DensityUnits	      "kg/m^3"
+      DensityUse	      "false"
+      GraphicsMode	      "1"
+      BodyColor		      "[0.5 0.5 0.5]"
+      GraphicsObj	      "[]"
+      AttachedToCS	      "1"
+      CG		      "Right$CG$[0 0 0]$ADJOINING$ADJOINING$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true"
+      WorkingFrames	      "Left$CS5$[0 0 0]$CG$CG$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true#Left$CS4$[0 0 0]$CG$CG$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true#Left$CS1$[0 0 0]$CG$CG$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true"
+      CGPos		      "[0 0 0]"
+      CGRot		      "[0 0 0]"
+      CS0Pos		      "[]"
+      CS0Rot		      "[]"
+      CS1Pos		      "[0 0 0]"
+      CS1Rot		      "[0 0 0]"
+      CS2Pos		      "[]"
+      CS2Rot		      "[]"
+      CS3Pos		      "[]"
+      CS3Rot		      "[]"
+      CS4Pos		      "[0 0 0]"
+      CS4Rot		      "[0 0 0]"
+      CS5Pos		      "[0 0 0]"
+      CS5Rot		      "[0 0 0]"
+      CS6Pos		      "[]"
+      CS6Rot		      "[]"
+      CS7Pos		      "[]"
+      CS7Rot		      "[]"
+      CS8Pos		      "[]"
+      CS8Rot		      "[]"
+      CS9Pos		      "[]"
+      CS9Rot		      "[]"
+      CS10Pos		      "[]"
+      CS10Rot		      "[]"
+      CS11Pos		      "[]"
+      CS11Rot		      "[]"
+      CS12Pos		      "[]"
+      CS12Rot		      "[]"
+      CS13Pos		      "[]"
+      CS13Rot		      "[]"
+      CS14Pos		      "[]"
+      CS14Rot		      "[]"
+      CS15Pos		      "[]"
+      CS15Rot		      "[]"
+      CS16Pos		      "[]"
+      CS16Rot		      "[]"
+      CS17Pos		      "[]"
+      CS17Rot		      "[]"
+      CS18Pos		      "[]"
+      CS18Rot		      "[]"
+      CS19Pos		      "[]"
+      CS19Rot		      "[]"
+      CS20Pos		      "[]"
+      CS20Rot		      "[]"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Revolute1"
+      Ports		      [0, 0, 0, 0, 0, 2, 2]
+      Position		      [340, 75, 390, 130]
+      Orientation	      "left"
+      ShowName		      off
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Joints/Revolute"
+      SourceType	      "Revolute"
+      PhysicalDomain	      "mechanical"
+      SubClassName	      "Unknown"
+      LeftPortType	      "blob"
+      RightPortType	      "blob"
+      LConnTagsString	      "__newl0|SA1"
+      RConnTagsString	      "__newr0|SA1"
+      NumSAPorts	      "2"
+      CutJoint		      "off"
+      MarkAsCut		      "off"
+      Primitives	      "revolute"
+      PrimitiveProps	      "R1$WORLD$[0 0 1]$revolute"
+      ClassName		      "Joint"
+      DialogClass	      "JointBlock"
+      R1Axis		      "[0 0 1]"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Revolute2"
+      Ports		      [0, 0, 0, 0, 0, 2, 2]
+      Position		      [150, 402, 205, 473]
+      NamePlacement	      "alternate"
+      ShowName		      off
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Joints/Revolute"
+      SourceType	      "Revolute"
+      PhysicalDomain	      "mechanical"
+      SubClassName	      "Unknown"
+      LeftPortType	      "blob"
+      RightPortType	      "blob"
+      LConnTagsString	      "__newl0|SA1"
+      RConnTagsString	      "__newr0|SA1"
+      NumSAPorts	      "2"
+      CutJoint		      "on"
+      MarkAsCut		      "off"
+      Primitives	      "revolute"
+      PrimitiveProps	      "R1$WORLD$[0 0 1]$revolute"
+      ClassName		      "Joint"
+      DialogClass	      "JointBlock"
+      R1Axis		      "[0 0 1]"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Revolute6"
+      Ports		      [0, 0, 0, 0, 0, 2, 1]
+      Position		      [605, 220, 655, 275]
+      Orientation	      "left"
+      ShowName		      off
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Joints/Revolute"
+      SourceType	      "Revolute"
+      PhysicalDomain	      "mechanical"
+      SubClassName	      "Unknown"
+      LeftPortType	      "blob"
+      RightPortType	      "blob"
+      LConnTagsString	      "__newl0|SA1"
+      RConnTagsString	      "__newr0"
+      NumSAPorts	      "1"
+      CutJoint		      "off"
+      MarkAsCut		      "off"
+      Primitives	      "revolute"
+      PrimitiveProps	      "R1$WORLD$[0 0 1]$revolute"
+      ClassName		      "Joint"
+      DialogClass	      "JointBlock"
+      R1Axis		      "[0 0 1]"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Revolute8"
+      Ports		      [0, 0, 0, 0, 0, 2, 1]
+      Position		      [335, 375, 385, 430]
+      Orientation	      "left"
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Joints/Revolute"
+      SourceType	      "Revolute"
+      PhysicalDomain	      "mechanical"
+      SubClassName	      "Unknown"
+      LeftPortType	      "blob"
+      RightPortType	      "blob"
+      LConnTagsString	      "__newl0|SA1"
+      RConnTagsString	      "__newr0"
+      NumSAPorts	      "1"
+      CutJoint		      "off"
+      MarkAsCut		      "off"
+      Primitives	      "revolute"
+      PrimitiveProps	      "R1$WORLD$[0 0 1]$revolute"
+      ClassName		      "Joint"
+      DialogClass	      "JointBlock"
+      R1Axis		      "[0 0 1]"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Revolute9"
+      Ports		      [0, 0, 0, 0, 0, 2, 1]
+      Position		      [345, 215, 395, 270]
+      Orientation	      "left"
+      ShowName		      off
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Joints/Revolute"
+      SourceType	      "Revolute"
+      PhysicalDomain	      "mechanical"
+      SubClassName	      "Unknown"
+      LeftPortType	      "blob"
+      RightPortType	      "blob"
+      LConnTagsString	      "__newl0|SA1"
+      RConnTagsString	      "__newr0"
+      NumSAPorts	      "1"
+      CutJoint		      "off"
+      MarkAsCut		      "off"
+      Primitives	      "revolute"
+      PrimitiveProps	      "R1$WORLD$[0 0 1]$revolute"
+      ClassName		      "Joint"
+      DialogClass	      "JointBlock"
+      R1Axis		      "[0 0 1]"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ring"
+      Ports		      [0, 0, 0, 0, 0, 1, 2]
+      Position		      [240, 50, 300, 125]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Bodies/Body"
+      SourceType	      "Body"
+      PhysicalDomain	      "mechanical"
+      SubClassName	      "Unknown"
+      LeftPortType	      "workingframe"
+      RightPortType	      "workingframe"
+      LConnTagsString	      "CS3"
+      RConnTagsString	      "CS2|CS1"
+      ClassName		      "Body"
+      DialogClass	      "MechanicalBodyBlock"
+      Mass		      "1"
+      MassUnits		      "kg"
+      InertiaUnits	      "kg*m^2"
+      Inertia		      "[0.501 0 0;0 0.501 0;0 0 1]"
+      Shape		      "Cylinder"
+      ShapeDims		      "[1 1]"
+      ShapeUnits	      "m"
+      ShapeUse		      "false"
+      Density		      "1"
+      DensityUnits	      "kg/m^3"
+      DensityUse	      "false"
+      GraphicsMode	      "1"
+      BodyColor		      "[0.5 0.5 0.5]"
+      GraphicsObj	      "[]"
+      AttachedToCS	      "1"
+      CG		      "Left$CG$[0 0 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$false"
+      WorkingFrames	      "Left$CS3$[0 0 0]$CG$CG$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true#Right$CS2$[0 0 0]$CG$CG$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true#Right$CS1$[0 0 0]$CG$CG$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true"
+      CGPos		      "[0 0 0]"
+      CGRot		      "[0 0 0]"
+      CS0Pos		      "[]"
+      CS0Rot		      "[]"
+      CS1Pos		      "[0 0 0]"
+      CS1Rot		      "[0 0 0]"
+      CS2Pos		      "[0 0 0]"
+      CS2Rot		      "[0 0 0]"
+      CS3Pos		      "[0 0 0]"
+      CS3Rot		      "[0 0 0]"
+      CS4Pos		      "[]"
+      CS4Rot		      "[]"
+      CS5Pos		      "[]"
+      CS5Rot		      "[]"
+      CS6Pos		      "[]"
+      CS6Rot		      "[]"
+      CS7Pos		      "[]"
+      CS7Rot		      "[]"
+      CS8Pos		      "[]"
+      CS8Rot		      "[]"
+      CS9Pos		      "[]"
+      CS9Rot		      "[]"
+      CS10Pos		      "[]"
+      CS10Rot		      "[]"
+      CS11Pos		      "[]"
+      CS11Rot		      "[]"
+      CS12Pos		      "[]"
+      CS12Rot		      "[]"
+      CS13Pos		      "[]"
+      CS13Rot		      "[]"
+      CS14Pos		      "[]"
+      CS14Rot		      "[]"
+      CS15Pos		      "[]"
+      CS15Rot		      "[]"
+      CS16Pos		      "[]"
+      CS16Rot		      "[]"
+      CS17Pos		      "[]"
+      CS17Rot		      "[]"
+      CS18Pos		      "[]"
+      CS18Rot		      "[]"
+      CS19Pos		      "[]"
+      CS19Rot		      "[]"
+      CS20Pos		      "[]"
+      CS20Rot		      "[]"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      Ports		      [5]
+      Position		      [645, 378, 775, 522]
+      Orientation	      "left"
+      Floating		      off
+      Location		      [603, 58, 1019, 675]
+      Open		      off
+      NumInputPorts	      "5"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+	axes4			"%<SignalLabel>"
+	axes5			"%<SignalLabel>"
+      }
+      YMin		      "-5~-5~-5~-5~-5"
+      YMax		      "5~5~5~5~5"
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Slip"
+      Ports		      [1]
+      Position		      [85, 485, 115, 515]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      Floating		      off
+      Location		      [643, 95, 967, 334]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"Slippage Velocity"
+      }
+      TimeRange		      "120"
+      YMin		      "-10"
+      YMax		      "0"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Sun"
+      Ports		      [0, 0, 0, 0, 0, 1, 2]
+      Position		      [245, 368, 310, 437]
+      Orientation	      "left"
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Bodies/Body"
+      SourceType	      "Body"
+      PhysicalDomain	      "mechanical"
+      SubClassName	      "Unknown"
+      LeftPortType	      "workingframe"
+      RightPortType	      "workingframe"
+      LConnTagsString	      "CS4"
+      RConnTagsString	      "CS3|CS1"
+      ClassName		      "Body"
+      DialogClass	      "MechanicalBodyBlock"
+      Mass		      "2"
+      MassUnits		      "kg"
+      InertiaUnits	      "kg*m^2"
+      Inertia		      "[0.52 0 0;0 0.52 0;0 0 1]*0.4"
+      Shape		      "Cylinder"
+      ShapeDims		      "[1 1]"
+      ShapeUnits	      "m"
+      ShapeUse		      "false"
+      Density		      "1"
+      DensityUnits	      "kg/m^3"
+      DensityUse	      "false"
+      GraphicsMode	      "1"
+      BodyColor		      "[0.5 0.5 0.5]"
+      GraphicsObj	      "[]"
+      AttachedToCS	      "1"
+      CG		      "Left$CG$[0 0 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$false"
+      WorkingFrames	      "Right$CS3$[0 0 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true#Left$CS4$[0 0 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true#Right$CS1$[0 0 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true"
+      CGPos		      "[0 0 0]"
+      CGRot		      "[0 0 0]"
+      CS0Pos		      "[]"
+      CS0Rot		      "[]"
+      CS1Pos		      "[0 0 0]"
+      CS1Rot		      "[0 0 0]"
+      CS2Pos		      "[]"
+      CS2Rot		      "[]"
+      CS3Pos		      "[0 0 0]"
+      CS3Rot		      "[0 0 0]"
+      CS4Pos		      "[0 0 0]"
+      CS4Rot		      "[0 0 0]"
+      CS5Pos		      "[]"
+      CS5Rot		      "[]"
+      CS6Pos		      "[]"
+      CS6Rot		      "[]"
+      CS7Pos		      "[]"
+      CS7Rot		      "[]"
+      CS8Pos		      "[]"
+      CS8Rot		      "[]"
+      CS9Pos		      "[]"
+      CS9Rot		      "[]"
+      CS10Pos		      "[]"
+      CS10Rot		      "[]"
+      CS11Pos		      "[]"
+      CS11Rot		      "[]"
+      CS12Pos		      "[]"
+      CS12Rot		      "[]"
+      CS13Pos		      "[]"
+      CS13Rot		      "[]"
+      CS14Pos		      "[]"
+      CS14Rot		      "[]"
+      CS15Pos		      "[]"
+      CS15Rot		      "[]"
+      CS16Pos		      "[]"
+      CS16Rot		      "[]"
+      CS17Pos		      "[]"
+      CS17Rot		      "[]"
+      CS18Pos		      "[]"
+      CS18Rot		      "[]"
+      CS19Pos		      "[]"
+      CS19Rot		      "[]"
+      CS20Pos		      "[]"
+      CS20Rot		      "[]"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Weld"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [595, 135, 645, 185]
+      Orientation	      "up"
+      DialogController	      "MECH.DynMechDlgSource"
+      SourceBlock	      "mblibv1/Joints/Weld"
+      SourceType	      "Weld"
+      PhysicalDomain	      "mechanical"
+      SubClassName	      "Unknown"
+      LeftPortType	      "blob"
+      RightPortType	      "blob"
+      LConnTagsString	      "__newl0"
+      RConnTagsString	      "__newr0"
+      NumSAPorts	      "0"
+      CutJoint		      "off"
+      MarkAsCut		      "off"
+      Primitives	      "weld"
+      PrimitiveProps	      "W$WORLD$[0 0 0]$weld"
+      ClassName		      "Joint"
+      DialogClass	      "JointBlock"
+      WAxis		      "[0 0 0]"
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Revolute8"
+      SrcPort		      RConn1
+      DstBlock		      "Sun"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Revolute6"
+      SrcPort		      LConn1
+      DstBlock		      "GND2"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Revolute8"
+      SrcPort		      LConn2
+      DstBlock		      "Joint Sensor"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Revolute9"
+      SrcPort		      LConn2
+      Points		      [0, 85]
+      DstBlock		      "Joint Sensor1"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Planet"
+      SrcPort		      RConn1
+      DstBlock		      "Revolute9"
+      DstPort		      RConn1
+    }
+    Line {
+      SrcBlock		      "Joint Sensor4"
+      SrcPort		      1
+      DstBlock		      "Goto"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Joint Sensor1"
+      SrcPort		      1
+      DstBlock		      "Goto1"
+      DstPort		      1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Revolute1"
+      SrcPort		      RConn1
+      DstBlock		      "Ring"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Planet"
+      SrcPort		      LConn2
+      DstBlock		      "Body Sensor"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Planet"
+      SrcPort		      LConn1
+      Points		      [-25, 0]
+      DstBlock		      "Gear Constraint 1"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Planet"
+      SrcPort		      LConn3
+      Points		      [-25, 0]
+      DstBlock		      "Gear Constraint 2"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Gear Constraint 2"
+      SrcPort		      LConn1
+      Points		      [0, 15]
+      DstBlock		      "Sun"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Carrier"
+      SrcPort		      RConn1
+      Points		      [-40, 0; 0, -115]
+      DstBlock		      "Revolute1"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Carrier"
+      SrcPort		      RConn2
+      DstBlock		      "Revolute9"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Carrier"
+      SrcPort		      RConn3
+      Points		      [-35, 0; 0, 135]
+      DstBlock		      "Revolute8"
+      DstPort		      LConn1
+    }
+    Line {
+      SrcBlock		      "Joint Sensor"
+      SrcPort		      1
+      DstBlock		      "Goto2"
+      DstPort		      1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Gear Constraint 1"
+      SrcPort		      LConn1
+      Points		      [0, -15]
+      DstBlock		      "Ring"
+      DstPort		      RConn2
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Body Actuator1"
+      SrcPort		      RConn1
+      DstBlock		      "Ring"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Revolute6"
+      SrcPort		      RConn1
+      DstBlock		      "Carrier"
+      DstPort		      LConn2
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Carrier"
+      SrcPort		      LConn1
+      Points		      [45, 0]
+      DstBlock		      "Weld"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Weld"
+      SrcPort		      RConn1
+      Points		      [0, -35]
+      DstBlock		      "Load"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Load"
+      SrcPort		      LConn1
+      DstBlock		      "Body Sensor1"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Load"
+      SrcPort		      LConn2
+      DstBlock		      "Body Actuator"
+      DstPort		      RConn1
+    }
+    Line {
+      SrcBlock		      "Body Sensor1"
+      SrcPort		      1
+      DstBlock		      "Gain"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gain"
+      SrcPort		      1
+      Points		      [0, 30]
+      DstBlock		      "Body Actuator"
+      DstPort		      1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Revolute2"
+      SrcPort		      RConn1
+      DstBlock		      "Sun"
+      DstPort		      RConn2
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "GND1"
+      SrcPort		      RConn1
+      DstBlock		      "Revolute2"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Revolute6"
+      SrcPort		      LConn2
+      Points		      [10, 0; 0, 65]
+      DstBlock		      "Joint Sensor4"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Revolute2"
+      SrcPort		      RConn2
+      Points		      [110, 0; 0, 70]
+      DstBlock		      "Friction clutch"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Friction clutch"
+      SrcPort		      RConn1
+      Points		      [-45, 0; 0, -70]
+      DstBlock		      "Revolute2"
+      DstPort		      LConn2
+    }
+    Line {
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      DstBlock		      "Clutch Engage"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Clutch Engage"
+      SrcPort		      1
+      DstBlock		      "Friction clutch"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Friction clutch"
+      SrcPort		      1
+      DstBlock		      "Slip"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Joint Sensor2"
+      SrcPort		      2
+      Points		      [0, 35]
+      DstBlock		      "Gain1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gain1"
+      SrcPort		      1
+      Points		      [-25, 0]
+      DstBlock		      "Joint Actuator"
+      DstPort		      1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Joint Actuator"
+      SrcPort		      RConn1
+      Points		      [0, -10]
+      DstBlock		      "Revolute1"
+      DstPort		      RConn2
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Revolute1"
+      SrcPort		      LConn2
+      Points		      [10, 0]
+      DstBlock		      "Joint Sensor2"
+      DstPort		      LConn1
+    }
+    Line {
+      SrcBlock		      "Joint Sensor2"
+      SrcPort		      1
+      Points		      [0, 10]
+      DstBlock		      "Goto3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Body Sensor"
+      SrcPort		      1
+      DstBlock		      "Goto4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Input torque"
+      SrcPort		      1
+      DstBlock		      "Body Actuator1"
+      DstPort		      1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Machine\nEnvironment"
+      SrcPort		      RConn1
+      Points		      [-10, 0; 0, 40]
+      DstBlock		      "GND1"
+      DstPort		      LConn1
+    }
+    Line {
+      SrcBlock		      "From3"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "From5"
+      SrcPort		      1
+      Points		      [-25, 0]
+      DstBlock		      "Scope"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "From4"
+      SrcPort		      1
+      Points		      [-25, 0]
+      DstBlock		      "Scope"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "From2"
+      SrcPort		      1
+      Points		      [-25, 0]
+      DstBlock		      "Scope"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From1"
+      SrcPort		      1
+      Points		      [-25, 0]
+      DstBlock		      "Scope"
+      DstPort		      1
+    }
+  }
+}
+MatData {
+  NumRecords		  2
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    2     8    (    !          %    \"     $    3     0         0    $P   &UE8VA?<&QA;F5T87)Y+T=.1#(       "
+  }
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    2     8    (    !          %    \"     $    3     0         0    $P   &UE8VA?<&QA;F5T87)Y+T=.1#$       "
+  }
+}

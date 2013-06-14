@@ -1,0 +1,57 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+      <title>Motorcycle: Full Nonlinear Motion</title>
+      <meta name="generator" content="MATLAB 7.6">
+      <meta name="date" content="2008-01-19">
+      <meta name="m-file" content="mech_motorcycle_plain">
+      <link rel="stylesheet" type="text/css" href="../../../../matlab/demos/private/style.css">
+   </head>
+   <body>
+      <div class="header">
+         <div class="left">mech_motorcycle_plain.mdl</div>
+         <div class="right"><a href="matlab:mech_motorcycle_plain">Open this model</a></div>
+      </div>
+      <div class="content">
+         <h1>Motorcycle: Full Nonlinear Motion</h1>
+         <p>Full nonlinear motorcycle motion.</p><img vspace="5" hspace="5" src="mech_motorcycle_plain_01.png"> <p class="footer"><br>
+            Published with MATLAB&reg; 7.6
+         </p>
+         <p class="footer" id="trademarks">MATLAB and Simulink are registered trademarks of The MathWorks, Inc.  Please see <a href="http://www.mathworks.com/trademarks">www.mathworks.com/trademarks</a> for a list of other trademarks owned by The MathWorks, Inc.  Other product or brand names are trademarks or registered trademarks
+            of their respective owners.
+         </p>
+      </div>
+      <!--
+##### SOURCE BEGIN #####
+%% Motorcycle: Full Nonlinear Motion
+% 
+% Full nonlinear motorcycle motion.
+
+clear all
+close all
+bdclose all
+
+%%
+
+open_system('mech_motorcycle_plain')
+set_param('mech_motorcycle_plain','StopTime','10')
+evalc('sim(''mech_motorcycle_plain'')');
+
+%%
+
+clear all
+close all
+bdclose all
+
+##### SOURCE END #####
+-->
+   </body>
+</html>

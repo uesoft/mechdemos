@@ -1,0 +1,703 @@
+Library {
+  Name			  "mech_stewart_control_deriv"
+  Version		  7.1
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "US-ASCII"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Thu Aug 21 19:16:24 2003"
+  Creator		  "batserve"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "batserve"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Feb  8 19:05:46 2008"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement:18>"
+  ConfigurationManager	  "None"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Derivative
+      LinearizePole	      "inf"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      TransferFcn
+      Numerator		      "[1]"
+      Denominator	      "[1 2 1]"
+      AbsoluteTolerance	      "auto"
+      ContinuousStateAttributes	"''"
+      Realization	      "auto"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "mech_stewart_control_deriv"
+    Location		    [14, 91, 570, 217]
+    Open		    off
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Derivative\nBlock"
+      Ports		      [1, 1]
+      Position		      [200, 45, 240, 105]
+      BackgroundColor	      "orange"
+      NamePlacement	      "alternate"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Derivative\nBlock"
+	Location		[14, 323, 358, 449]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "u"
+	  Position		  [105, 63, 135, 77]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Derivative
+	  Name			  "Derivative"
+	  Position		  [160, 55, 190, 85]
+	  NamePlacement		  "alternate"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "du/dt"
+	  Position		  [215, 63, 245, 77]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "Derivative"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "du/dt"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "u"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Derivative"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Filtered\nDerivative"
+      Ports		      [1, 1]
+      Position		      [295, 45, 335, 105]
+      BackgroundColor	      "orange"
+      NamePlacement	      "alternate"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Filtered\nDerivative"
+	Location		[586, 88, 937, 474]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "u"
+	  Position		  [25, 183, 55, 197]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 12]
+	  Position		  [100, 17, 105, 363]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "12"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [12, 1]
+	  Position		  [245, 16, 250, 364]
+	  ShowName		  off
+	  Inputs		  "12"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Transfer Fcn1"
+	  Position		  [140, 17, 200, 33]
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  Numerator		  "[A 0]"
+	  Denominator		  "[1 A]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Transfer Fcn10"
+	  Position		  [140, 287, 200, 303]
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Numerator		  "[A 0]"
+	  Denominator		  "[1 A]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Transfer Fcn11"
+	  Position		  [140, 317, 200, 333]
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Numerator		  "[A 0]"
+	  Denominator		  "[1 A]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Transfer Fcn12"
+	  Position		  [140, 347, 200, 363]
+	  BackgroundColor	  "black"
+	  Numerator		  "[A 0]"
+	  Denominator		  "[1 A]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Transfer Fcn2"
+	  Position		  [140, 47, 200, 63]
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Numerator		  "[A 0]"
+	  Denominator		  "[1 A]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Transfer Fcn3"
+	  Position		  [140, 77, 200, 93]
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Numerator		  "[A 0]"
+	  Denominator		  "[1 A]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Transfer Fcn4"
+	  Position		  [140, 107, 200, 123]
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Numerator		  "[A 0]"
+	  Denominator		  "[1 A]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Transfer Fcn5"
+	  Position		  [140, 137, 200, 153]
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Numerator		  "[A 0]"
+	  Denominator		  "[1 A]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Transfer Fcn6"
+	  Position		  [140, 167, 200, 183]
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Numerator		  "[A 0]"
+	  Denominator		  "[1 A]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Transfer Fcn7"
+	  Position		  [140, 197, 200, 213]
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Numerator		  "[A 0]"
+	  Denominator		  "[1 A]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Transfer Fcn8"
+	  Position		  [140, 227, 200, 243]
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Numerator		  "[A 0]"
+	  Denominator		  "[1 A]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Transfer Fcn9"
+	  Position		  [140, 257, 200, 273]
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Numerator		  "[A 0]"
+	  Denominator		  "[1 A]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "du/dt"
+	  Position		  [295, 183, 325, 197]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "du/dt"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "u"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "Transfer Fcn1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Transfer Fcn1"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "Transfer Fcn2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Transfer Fcn2"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  DstBlock		  "Transfer Fcn3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Transfer Fcn3"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  DstBlock		  "Transfer Fcn4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Transfer Fcn4"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  5
+	  DstBlock		  "Transfer Fcn5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Transfer Fcn5"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  6
+	  DstBlock		  "Transfer Fcn6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Transfer Fcn6"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  7
+	  DstBlock		  "Transfer Fcn7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Transfer Fcn7"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  8
+	  DstBlock		  "Transfer Fcn8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Transfer Fcn8"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  9
+	  DstBlock		  "Transfer Fcn9"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Transfer Fcn9"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  9
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  10
+	  DstBlock		  "Transfer Fcn10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Transfer Fcn10"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  10
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  11
+	  DstBlock		  "Transfer Fcn11"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Transfer Fcn11"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  11
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  12
+	  DstBlock		  "Transfer Fcn12"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Transfer Fcn12"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  12
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Numerical\nDerivative "
+      Ports		      [1, 1]
+      Position		      [35, 51, 85, 99]
+      BackgroundColor	      "orange"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      BlockChoice	      "Derivative Block"
+      TemplateBlock	      "self"
+      MemberBlocks	      "Derivative Block,Filtered Derivative"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Numerical\nDerivative "
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "u"
+	  Position		  [20, 40, 40, 60]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Derivative\nBlock"
+	  Ports			  [1, 1]
+	  Position		  [100, 40, 140, 80]
+	  BackgroundColor	  "orange"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "mech_stewart_control_deriv/Derivative\nBlock"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "du/dt"
+	  Position		  [200, 40, 220, 60]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "u"
+	  SrcPort		  1
+	  DstBlock		  "Derivative\nBlock"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Derivative\nBlock"
+	  SrcPort		  1
+	  DstBlock		  "du/dt"
+	  DstPort		  1
+	}
+      }
+    }
+    Annotation {
+      Name		      "Configurable susbystem library:\nNumerical derivative models for\nmech_stewart_control.mdl"
+      Position		      [456, 75]
+      FontName		      "Arial"
+      FontSize		      11
+    }
+  }
+}

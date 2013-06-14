@@ -1,0 +1,63 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+      <title>Stochastic Microcontroller</title>
+      <meta name="generator" content="MATLAB 7.6">
+      <meta name="date" content="2008-01-19">
+      <meta name="m-file" content="mech_brownian_osc_control">
+      <link rel="stylesheet" type="text/css" href="../../../../matlab/demos/private/style.css">
+   </head>
+   <body>
+      <div class="header">
+         <div class="left">mech_brownian_osc_control.mdl</div>
+         <div class="right"><a href="matlab:mech_brownian_osc_control">Open this model</a></div>
+      </div>
+      <div class="content">
+         <h1>Stochastic Microcontroller</h1>
+         <p>Modified Brownian motion: A microparticle oscillates with a linear damped microspring while diffusing by the addition of a
+            random white noise force. A microcontroller applies a control force that tries to keep the particle within predefined limits.
+         </p>
+         <p>The system is ergodic: Averages are computed as time averages and assumed to be equal to statistical ensemble averages over
+            long times.  Based on a magnetic microtweezer system for biophysics research.
+         </p><img vspace="5" hspace="5" src="mech_brownian_osc_control_01.png"> <p class="footer"><br>
+            Published with MATLAB&reg; 7.6
+         </p>
+         <p class="footer" id="trademarks">MATLAB and Simulink are registered trademarks of The MathWorks, Inc.  Please see <a href="http://www.mathworks.com/trademarks">www.mathworks.com/trademarks</a> for a list of other trademarks owned by The MathWorks, Inc.  Other product or brand names are trademarks or registered trademarks
+            of their respective owners.
+         </p>
+      </div>
+      <!--
+##### SOURCE BEGIN #####
+%% Stochastic Microcontroller
+% 
+% Modified Brownian motion: A microparticle oscillates with a linear damped microspring while diffusing by the addition of a random white noise force. A microcontroller applies a control force that tries to keep the particle within predefined limits.
+% 
+% The system is ergodic: Averages are computed as time averages and assumed to be equal to statistical ensemble averages over long times.  Based on a magnetic microtweezer system for biophysics research.
+
+clear all
+close all
+bdclose all
+
+%%
+
+open_system('mech_brownian_osc_control')
+evalc('sim(''mech_brownian_osc_control'')');
+
+%%
+
+clear all
+close all
+bdclose all
+
+##### SOURCE END #####
+-->
+   </body>
+</html>

@@ -1,0 +1,879 @@
+Library {
+  Name			  "mech_fceng_vrlib"
+  Version		  7.1
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Fri May 17 17:38:11 2002"
+  Creator		  "arnav"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "batserve"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Feb  8 19:04:42 2008"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  ConfigurationManager	  "None"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "fixdt(1,16,0)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Reshape
+      OutputDimensionality    "1-D array"
+      OutputDimensions	      "[1,1]"
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "mech_fceng_vrlib"
+    Location		    [32, 99, 398, 280]
+    Open		    off
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "mech_fceng_vranim"
+      Ports		      []
+      Position		      [145, 60, 185, 120]
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"mech_fceng_vranim"
+	Location		[11, 138, 766, 553]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [180, 218, 220, 242]
+	  ShowName		  off
+	  Value			  "[1 0 0]"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Convert1"
+	  Tag			  "Pose2VR"
+	  Ports			  [1, 1]
+	  Position		  [460, 29, 515, 51]
+	  ShowName		  off
+	  SourceBlock		  "mblibv1/Utilities/Convert from Rotation Matrix to\nVirtual Reality Toolbox"
+	  SourceType		  "Convert from Rotation Matrix to Virtual Reality Toolbox"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Convert2"
+	  Tag			  "Pose2VR"
+	  Ports			  [1, 1]
+	  Position		  [460, 79, 515, 101]
+	  ShowName		  off
+	  SourceBlock		  "mblibv1/Utilities/Convert from Rotation Matrix to\nVirtual Reality Toolbox"
+	  SourceType		  "Convert from Rotation Matrix to Virtual Reality Toolbox"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Convert3"
+	  Tag			  "Pose2VR"
+	  Ports			  [1, 1]
+	  Position		  [460, 129, 515, 151]
+	  ShowName		  off
+	  SourceBlock		  "mblibv1/Utilities/Convert from Rotation Matrix to\nVirtual Reality Toolbox"
+	  SourceType		  "Convert from Rotation Matrix to Virtual Reality Toolbox"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Convert4"
+	  Tag			  "Pose2VR"
+	  Ports			  [1, 1]
+	  Position		  [460, 179, 515, 201]
+	  ShowName		  off
+	  SourceBlock		  "mblibv1/Utilities/Convert from Rotation Matrix to\nVirtual Reality Toolbox"
+	  SourceType		  "Convert from Rotation Matrix to Virtual Reality Toolbox"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 4]
+	  Position		  [475, 251, 480, 354]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux1"
+	  Ports			  [1, 4]
+	  Position		  [345, 35, 350, 245]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From10"
+	  Position		  [25, 53, 70, 77]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "CR1T"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From11"
+	  Position		  [320, 253, 365, 277]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "P1T"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From12"
+	  Position		  [260, 278, 305, 302]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "P2T"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From13"
+	  Position		  [325, 303, 370, 327]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "P3T"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From14"
+	  Position		  [265, 328, 310, 352]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "P4T"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From15"
+	  Position		  [380, 78, 425, 102]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "CR2R"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From16"
+	  Position		  [25, 103, 70, 127]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "CR2T"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From17"
+	  Position		  [380, 128, 425, 152]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "CR3R"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From18"
+	  Position		  [25, 153, 70, 177]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "CR3T"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From19"
+	  Position		  [380, 178, 425, 202]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "CR4R"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From20"
+	  Position		  [25, 203, 70, 227]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "CR4T"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From8"
+	  Position		  [230, 238, 275, 262]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "CrankSR"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From9"
+	  Position		  [380, 28, 425, 52]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "CR1R"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1]
+	  Position		  [300, 221, 305, 259]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux1"
+	  Ports			  [4, 1]
+	  Position		  [390, 249, 395, 356]
+	  ShowName		  off
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux2"
+	  Ports			  [4, 1]
+	  Position		  [105, 37, 110, 243]
+	  ShowName		  off
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Scale pistons"
+	  Ports			  [0, 1]
+	  Position		  [265, 374, 315, 396]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Scale pistons"
+	    Location		    [378, 451, 768, 577]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Divide\nby 100"
+	      Position		      [235, 56, 260, 74]
+	      Gain		      "1/100"
+	      ParameterDataType	      "sfix(16)"
+	      ParameterScaling	      "2^0"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Offset"
+	      Position		      [25, 28, 215, 102]
+	      Value		      "[18 -23.79 0; 6 -15.30 0;-6 -15.30 0;-18 -23.79 0]'"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Reshape
+	      Name		      "Reshape"
+	      Position		      [280, 53, 310, 77]
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [335, 58, 365, 72]
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Offset"
+	      SrcPort		      1
+	      DstBlock		      "Divide\nby 100"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Divide\nby 100"
+	      SrcPort		      1
+	      DstBlock		      "Reshape"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reshape"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Scale rods"
+	  Ports			  [0, 1]
+	  Position		  [60, 253, 110, 277]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Scale rods"
+	    Location		    [151, 381, 536, 507]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Divide\nby 1"
+	      Position		      [235, 56, 260, 74]
+	      Gain		      "1/100"
+	      ParameterDataType	      "sfix(16)"
+	      ParameterScaling	      "2^0"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Offset1"
+	      Position		      [25, 28, 215, 102]
+	      Value		      "[18 -4.24 +4.24;6 4.24 -4.24;-6 4.24 -4.24;-18 -4.24 +4.24]'"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Reshape
+	      Name		      "Reshape1"
+	      Position		      [275, 53, 305, 77]
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [330, 58, 360, 72]
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Offset1"
+	      SrcPort		      1
+	      DstBlock		      "Divide\nby 1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Divide\nby 1"
+	      SrcPort		      1
+	      DstBlock		      "Reshape1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reshape1"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1]
+	  Position		  [425, 295, 445, 315]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1]
+	  Position		  [150, 130, 170, 150]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "VR Sink"
+	  Ports			  [13]
+	  Position		  [575, 16, 725, 364]
+	  SourceBlock		  "vrlib/VR Sink"
+	  SourceType		  "Virtual Reality Sink"
+	  SampleTime		  "0.01"
+	  ViewEnable		  "on"
+	  RemoteChange		  "off"
+	  RemoteView		  "on"
+	  FieldsWritten		  "ConnRod1.rotation#ConnRod1.translation#ConnRod2.rotation#ConnRod2.translation#ConnRod3.rotation#ConnRod3.translation#ConnRod4.rotation#ConnRod4.translation#CrankShaft.rotation#Piston1.translation#Piston2.translation#Piston3.translation#Piston4.translation"
+	  WorldFileName		  "mech_fourcylniceng.wrl"
+	  WorldDescription	  "Four Cylinder Engine Demo"
+	  AutoView		  "off"
+	  VideoDimensions	  "[]"
+	  FigureProperties	  "{'Position', 'Name', 'Viewpoint', 'CameraBound', 'CameraDirection', 'CameraPosition', 'CameraUpVector', 'ZoomFactor', 'Antialiasing', 'Headlight', 'Lighting', 'PanelMode', 'Textures', 'Transparency', 'Wireframe', 'DeleteFcn', ; }"
+	}
+	Line {
+	  SrcBlock		  "From15"
+	  SrcPort		  1
+	  DstBlock		  "Convert2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From9"
+	  SrcPort		  1
+	  DstBlock		  "Convert1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert1"
+	  SrcPort		  1
+	  DstBlock		  "VR Sink"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert2"
+	  SrcPort		  1
+	  DstBlock		  "VR Sink"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From17"
+	  SrcPort		  1
+	  DstBlock		  "Convert3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert3"
+	  SrcPort		  1
+	  DstBlock		  "VR Sink"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "From19"
+	  SrcPort		  1
+	  DstBlock		  "Convert4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert4"
+	  SrcPort		  1
+	  DstBlock		  "VR Sink"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "VR Sink"
+	  DstPort		  9
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From8"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From11"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From12"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From13"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From14"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Scale pistons"
+	  SrcPort		  1
+	  Points		  [115, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "VR Sink"
+	  DstPort		  10
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "VR Sink"
+	  DstPort		  11
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  DstBlock		  "VR Sink"
+	  DstPort		  12
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  DstBlock		  "VR Sink"
+	  DstPort		  13
+	}
+	Line {
+	  SrcBlock		  "From10"
+	  SrcPort		  1
+	  DstBlock		  "Mux2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From16"
+	  SrcPort		  1
+	  DstBlock		  "Mux2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From18"
+	  SrcPort		  1
+	  DstBlock		  "Mux2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From20"
+	  SrcPort		  1
+	  DstBlock		  "Mux2"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Mux2"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Scale rods"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  1
+	  DstBlock		  "VR Sink"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  2
+	  DstBlock		  "VR Sink"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  3
+	  DstBlock		  "VR Sink"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  4
+	  DstBlock		  "VR Sink"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Demux1"
+	  DstPort		  1
+	}
+      }
+    }
+  }
+}

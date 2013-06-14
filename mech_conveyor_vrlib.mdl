@@ -1,0 +1,415 @@
+Library {
+  Name			  "mech_conveyor_vrlib"
+  Version		  7.1
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Sat Sep 24 15:51:16 2005"
+  Creator		  "arnav"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "batserve"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Feb  8 19:04:32 2008"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  ConfigurationManager	  "None"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "mech_conveyor_vrlib"
+    Location		    [27, 133, 369, 343]
+    Open		    off
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "mech_conveyor_vranim"
+      Ports		      []
+      Position		      [130, 60, 170, 120]
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"mech_conveyor_vranim"
+	Location		[256, 235, 596, 595]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "Convert1"
+	  Tag			  "Pose2VR"
+	  Ports			  [1, 1]
+	  Position		  [150, 28, 195, 52]
+	  ShowName		  off
+	  SourceBlock		  "mblibv1/Utilities/Convert from Rotation Matrix to\nVirtual Reality Toolbox"
+	  SourceType		  "Convert from Rotation Matrix to Virtual Reality Toolbox"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Convert2"
+	  Tag			  "Pose2VR"
+	  Ports			  [1, 1]
+	  Position		  [150, 99, 195, 121]
+	  ShowName		  off
+	  SourceBlock		  "mblibv1/Utilities/Convert from Rotation Matrix to\nVirtual Reality Toolbox"
+	  SourceType		  "Convert from Rotation Matrix to Virtual Reality Toolbox"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Convert3"
+	  Tag			  "Pose2VR"
+	  Ports			  [1, 1]
+	  Position		  [150, 169, 195, 191]
+	  ShowName		  off
+	  SourceBlock		  "mblibv1/Utilities/Convert from Rotation Matrix to\nVirtual Reality Toolbox"
+	  SourceType		  "Convert from Rotation Matrix to Virtual Reality Toolbox"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Convert4"
+	  Tag			  "Pose2VR"
+	  Ports			  [1, 1]
+	  Position		  [150, 239, 195, 261]
+	  ShowName		  off
+	  SourceBlock		  "mblibv1/Utilities/Convert from Rotation Matrix to\nVirtual Reality Toolbox"
+	  SourceType		  "Convert from Rotation Matrix to Virtual Reality Toolbox"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [80, 26, 120, 54]
+	  BackgroundColor	  "gray"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "L1R"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From1"
+	  Position		  [80, 96, 120, 124]
+	  BackgroundColor	  "gray"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "L2R"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From2"
+	  Position		  [80, 166, 120, 194]
+	  BackgroundColor	  "gray"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "L3R"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From3"
+	  Position		  [80, 236, 120, 264]
+	  BackgroundColor	  "gray"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "L4R"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From4"
+	  Position		  [80, 306, 120, 334]
+	  BackgroundColor	  "gray"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "PT"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From5"
+	  Position		  [25, 201, 65, 229]
+	  BackgroundColor	  "gray"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "L3T"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From6"
+	  Position		  [25, 131, 65, 159]
+	  BackgroundColor	  "gray"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "L2T"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From7"
+	  Position		  [25, 61, 65, 89]
+	  BackgroundColor	  "gray"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "L1T"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From8"
+	  Position		  [25, 271, 65, 299]
+	  BackgroundColor	  "gray"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "L4T"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "VR Sink"
+	  Ports			  [9]
+	  Position		  [225, 30, 315, 330]
+	  SourceBlock		  "vrlib/VR Sink"
+	  SourceType		  "Virtual Reality Sink"
+	  SampleTime		  "0.1"
+	  ViewEnable		  "on"
+	  RemoteChange		  "off"
+	  RemoteView		  "off"
+	  FieldsWritten		  "Link1.rotation.4#Link1.translation.3#Link2.rotation.4#Link2.translation.3#Link3.rotation.4#Link3.translation.3#Link4.rotation.4#Link4.translation.3#Pusher.translation.3"
+	  WorldFileName		  "convmech.wrl"
+	  WorldDescription	  "convmech"
+	  AutoView		  "off"
+	  FigureProperties	  "{}"
+	}
+	Line {
+	  SrcBlock		  "From4"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink"
+	  DstPort		  9
+	}
+	Line {
+	  SrcBlock		  "From8"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "Convert1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert4"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "From5"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Convert3"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "From6"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Convert2"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From7"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "VR Sink"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From3"
+	  SrcPort		  1
+	  DstBlock		  "Convert4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From2"
+	  SrcPort		  1
+	  DstBlock		  "Convert3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From1"
+	  SrcPort		  1
+	  DstBlock		  "Convert2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Convert1"
+	  DstPort		  1
+	}
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+      <title>Four Cylinder IC Engine with Virtual Reality Scene</title>
+      <meta name="generator" content="MATLAB 7.6">
+      <meta name="date" content="2008-01-19">
+      <meta name="m-file" content="mech_fceng_vr">
+      <link rel="stylesheet" type="text/css" href="../../../../matlab/demos/private/style.css">
+   </head>
+   <body>
+      <div class="header">
+         <div class="left">mech_fceng_vr.mdl</div>
+         <div class="right"><a href="matlab:mech_fceng_vr">Open this model</a></div>
+      </div>
+      <div class="content">
+         <h1>Four Cylinder IC Engine with Virtual Reality Scene</h1>
+         <p>Internal combustion engine with four cylinders, Stateflow logic, and Virtual Reality Toolbox animation.</p>
+         <p>This model simulates a four-cylinder internal combustion engine. Major functions are organized into subsystems. SimMechanics
+            blocks simulate the motion of the crank, connecting rods, and pistons. Stateflow blocks control the ignition timing of the
+            cylinders. Simulink blocks model the idealized gas dynamics. The Control subsystem provides user-adjustable fuel rate control.
+         </p><img vspace="5" hspace="5" src="mech_fceng_vr_01.png"> <img vspace="5" hspace="5" src="mech_fceng_vr_02.png"> <img vspace="5" hspace="5" src="mech_fceng_vr_03.png"> <pre class="codeoutput">Warning: When displaying: "mech_fceng_vr/Cylinder4", the expression
+"crodassm" could not be evaluated.  Check that the parameter entries and
+variables used in the Initialization command are valid MATLAB expressions.
+Warning: When displaying: "mech_fceng_vr/Cylinder3", the expression
+"crodassmb" could not be evaluated.  Check that the parameter entries and
+variables used in the Initialization command are valid MATLAB expressions.
+</pre><p class="footer"><br>
+            Published with MATLAB&reg; 7.6
+         </p>
+         <p class="footer" id="trademarks">MATLAB and Simulink are registered trademarks of The MathWorks, Inc.  Please see <a href="http://www.mathworks.com/trademarks">www.mathworks.com/trademarks</a> for a list of other trademarks owned by The MathWorks, Inc.  Other product or brand names are trademarks or registered trademarks
+            of their respective owners.
+         </p>
+      </div>
+      <!--
+##### SOURCE BEGIN #####
+%% Four Cylinder IC Engine with Virtual Reality Scene
+% 
+% Internal combustion engine with four cylinders, Stateflow logic, and Virtual Reality Toolbox animation.
+% 
+% This model simulates a four-cylinder internal combustion engine. Major functions are organized into subsystems. SimMechanics blocks simulate the motion of the crank, connecting rods, and pistons. Stateflow blocks control the ignition timing of the cylinders. Simulink blocks model the idealized gas dynamics. The Control subsystem provides user-adjustable fuel rate control.
+
+clear all
+close all
+bdclose all
+
+%%
+
+open_system('mech_fceng_vr')
+set_param('mech_fceng_vr','StopTime','10')
+evalc('sim(''mech_fceng_vr'')');
+
+%%
+
+clear all
+close all
+bdclose all
+
+##### SOURCE END #####
+-->
+   </body>
+</html>

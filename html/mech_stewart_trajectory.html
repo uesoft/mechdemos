@@ -1,0 +1,67 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+      <title>Stewart Platform with Control Reference Trajectory</title>
+      <meta name="generator" content="MATLAB 7.6">
+      <meta name="date" content="2008-01-19">
+      <meta name="m-file" content="mech_stewart_trajectory">
+      <link rel="stylesheet" type="text/css" href="../../../../matlab/demos/private/style.css">
+   </head>
+   <body>
+      <div class="header">
+         <div class="left">mech_stewart_trajectory.mdl</div>
+         <div class="right"><a href="matlab:mech_stewart_trajectory">Open this model</a></div>
+      </div>
+      <div class="content">
+         <h1>Stewart Platform with Control Reference Trajectory</h1>
+         <p>Stewart platform with predefined reference trajectory. A Stewart platform is a six-degree-of-freedom machine for precise positioning
+            and orienting. It consists of a top plate connected to a fixed base through six parallel legs. By extending or shortening
+            the legs and swiveling them on a set of universal joints, the plate's original six degrees of freedom are reproduced with
+            greater stability and precision.
+         </p>
+         <p>The model is separated into a plant subsystem, the Stewart platform along with necessary actuators and sensors, and a controller
+            subsystem that guides the platform through a predefined motion profile with actuation signals. The controller keeps the actual
+            motion close to the reference motion via sensor-actuator feedback.
+         </p><img vspace="5" hspace="5" src="mech_stewart_trajectory_01.png"> <p class="footer"><br>
+            Published with MATLAB&reg; 7.6
+         </p>
+         <p class="footer" id="trademarks">MATLAB and Simulink are registered trademarks of The MathWorks, Inc.  Please see <a href="http://www.mathworks.com/trademarks">www.mathworks.com/trademarks</a> for a list of other trademarks owned by The MathWorks, Inc.  Other product or brand names are trademarks or registered trademarks
+            of their respective owners.
+         </p>
+      </div>
+      <!--
+##### SOURCE BEGIN #####
+%% Stewart Platform with Control Reference Trajectory
+% 
+% Stewart platform with predefined reference trajectory. A Stewart platform is a six-degree-of-freedom machine for precise positioning and orienting. It consists of a top plate connected to a fixed base through six parallel legs. By extending or shortening the legs and swiveling them on a set of universal joints, the plate's original six degrees of freedom are reproduced with greater stability and precision.
+% 
+% The model is separated into a plant subsystem, the Stewart platform along with necessary actuators and sensors, and a controller subsystem that guides the platform through a predefined motion profile with actuation signals. The controller keeps the actual motion close to the reference motion via sensor-actuator feedback.
+
+clear all
+close all
+bdclose all
+
+%%
+
+open_system('mech_stewart_trajectory')
+set_param('mech_stewart_trajectory','StopTime','10')
+evalc('sim(''mech_stewart_trajectory'')');
+
+%%
+
+clear all
+close all
+bdclose all
+
+##### SOURCE END #####
+-->
+   </body>
+</html>

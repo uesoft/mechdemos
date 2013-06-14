@@ -1,0 +1,62 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+      <title>Viscous Medium</title>
+      <meta name="generator" content="MATLAB 7.6">
+      <meta name="date" content="2008-01-19">
+      <meta name="m-file" content="mech_viscous">
+      <link rel="stylesheet" type="text/css" href="../../../../matlab/demos/private/style.css">
+   </head>
+   <body>
+      <div class="header">
+         <div class="left">mech_viscous.mdl</div>
+         <div class="right"><a href="matlab:mech_viscous">Open this model</a></div>
+      </div>
+      <div class="content">
+         <h1>Viscous Medium</h1>
+         <p>Two bodies connected by a spring in a viscous medium.</p>
+         <p>This model simulates two bodies in an isotropically viscous medium with a Hooke's force law between them. The Body Spring
+            &amp; Damper models an undamped spherical spring whose rest length is 5 m. The Joint Spring &amp; Damper has zero spring stiffness
+            and the same damper coefficients for each primitive axis of the In-Plane joint. It models the isotropically viscous medium.
+         </p><img vspace="5" hspace="5" src="mech_viscous_01.png"> <p class="footer"><br>
+            Published with MATLAB&reg; 7.6
+         </p>
+         <p class="footer" id="trademarks">MATLAB and Simulink are registered trademarks of The MathWorks, Inc.  Please see <a href="http://www.mathworks.com/trademarks">www.mathworks.com/trademarks</a> for a list of other trademarks owned by The MathWorks, Inc.  Other product or brand names are trademarks or registered trademarks
+            of their respective owners.
+         </p>
+      </div>
+      <!--
+##### SOURCE BEGIN #####
+%% Viscous Medium
+% 
+% Two bodies connected by a spring in a viscous medium.
+% 
+% This model simulates two bodies in an isotropically viscous medium with a Hooke's force law between them. The Body Spring & Damper models an undamped spherical spring whose rest length is 5 m. The Joint Spring & Damper has zero spring stiffness and the same damper coefficients for each primitive axis of the In-Plane joint. It models the isotropically viscous medium.
+
+clear all
+close all
+bdclose all
+
+%%
+
+open_system('mech_viscous')
+evalc('sim(''mech_viscous'')');
+
+%%
+
+clear all
+close all
+bdclose all
+
+##### SOURCE END #####
+-->
+   </body>
+</html>

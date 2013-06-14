@@ -1,0 +1,4 @@
+Constrained Parts: NEW_SINGLE_DANBAI, BASE
+Constrain Name: 
+Error Details: Unsupported geometry type for one or more constrained parts. A weld joint has been added between the constrained parts.
+---------------------------------------------------------------------------------
